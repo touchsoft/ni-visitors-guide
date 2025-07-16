@@ -7,8 +7,6 @@ categories: attractions natural-wonders
 
 # Giant's Causeway: A Natural Wonder of Northern Ireland
 
-<div class="celtic-pattern"></div>
-
 The Giant's Causeway stands as one of Northern Ireland's most spectacular natural attractions, captivating visitors with its otherworldly landscape of hexagonal basalt columns that seem too perfect to be natural. Located on the rugged Antrim Coast, this UNESCO World Heritage Site has been inspiring awe and wonder for centuries.
 
 ## The Legend of Finn McCool

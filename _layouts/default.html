@@ -4,77 +4,170 @@
   <head>
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="https://unpkg.com/minima@2.0.0/minima.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        --irish-green: #009639;
-        --irish-orange: #ff7900;
-        --irish-white: #ffffff;
-        --celtic-gold: #d4af37;
-        --emerald: #50c878;
-        --stone-grey: #8b8680;
+        --primary-blue: #2563eb;
+        --dark-blue: #1e40af;
+        --light-blue: #3b82f6;
+        --accent-teal: #0891b2;
+        --neutral-dark: #1f2937;
+        --neutral-medium: #6b7280;
+        --neutral-light: #f8fafc;
+        --white: #ffffff;
+        --border-color: #e5e7eb;
       }
       
       body {
-        font-family: 'Georgia', serif;
-        background: linear-gradient(135deg, var(--irish-white) 0%, #f8f9fa 100%);
-        color: #2c3e50;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--neutral-light);
+        color: var(--neutral-dark);
         line-height: 1.6;
+        margin: 0;
+        padding: 0;
       }
       
       header {
-        background: linear-gradient(135deg, var(--irish-green) 0%, var(--emerald) 100%);
-        color: white;
-        padding: 2rem 0;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-bottom: 4px solid var(--celtic-gold);
+        background: var(--white);
+        color: var(--neutral-dark);
+        padding: 1.5rem 0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      header .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      
+      header h1 {
+        margin: 0;
+        font-size: 1.875rem;
+        font-weight: 700;
       }
       
       header h1 a {
-        color: white;
+        color: var(--primary-blue);
         text-decoration: none;
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        transition: color 0.3s ease;
       }
       
       header h1 a:hover {
-        color: var(--celtic-gold);
-        transition: color 0.3s ease;
+        color: var(--dark-blue);
       }
       
       main {
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 2rem auto;
+        padding: 0 2rem;
       }
       
-      h1, h2, h3 {
-        color: var(--irish-green);
-        border-bottom: 2px solid var(--celtic-gold);
-        padding-bottom: 0.5rem;
+      .content-wrapper {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 2.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      
+      h1 {
+        color: var(--neutral-dark);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        border: none;
+        padding: 0;
+      }
+      
+      h2 {
+        color: var(--neutral-dark);
+        font-size: 1.875rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border: none;
+        padding: 0;
+      }
+      
+      h3 {
+        color: var(--neutral-dark);
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        border: none;
+        padding: 0;
       }
       
       a {
-        color: var(--irish-green);
+        color: var(--primary-blue);
         text-decoration: none;
         transition: color 0.3s ease;
       }
       
       a:hover {
-        color: var(--irish-orange);
+        color: var(--dark-blue);
       }
       
-      .celtic-pattern {
-        background: linear-gradient(45deg, var(--celtic-gold), var(--emerald));
-        height: 4px;
-        margin: 1rem 0;
-        border-radius: 2px;
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: var(--primary-blue);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .btn:hover {
+        background: var(--dark-blue);
+        color: white;
+        transform: translateY(-1px);
+      }
+      
+      .card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border: 1px solid var(--border-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .hero-section h1 {
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      
+      .hero-section p {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
       }
       
       ul {
@@ -83,41 +176,86 @@
       }
       
       ul li {
-        padding: 0.5rem 0;
-        border-left: 4px solid var(--irish-green);
-        padding-left: 1rem;
+        padding: 1rem;
         margin: 0.5rem 0;
-        background: #f8f9fa;
-        border-radius: 4px;
+        background: var(--neutral-light);
+        border-radius: 8px;
+        border-left: 4px solid var(--primary-blue);
+        transition: transform 0.2s ease;
+      }
+      
+      ul li:hover {
+        transform: translateX(4px);
+      }
+      
+      ul li a {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
       
       footer {
         text-align: center;
-        padding: 2rem;
-        background: var(--stone-grey);
+        padding: 3rem 2rem;
+        background: var(--neutral-dark);
         color: white;
-        margin-top: 3rem;
+        margin-top: 4rem;
       }
       
-      .irish-flag {
-        display: inline-block;
-        width: 30px;
-        height: 20px;
-        background: linear-gradient(to right, var(--irish-green) 33%, white 33% 66%, var(--irish-orange) 66%);
-        border: 1px solid #ccc;
-        margin-right: 10px;
-        vertical-align: middle;
+      .divider {
+        height: 1px;
+        background: var(--border-color);
+        margin: 2rem 0;
+      }
+      
+      .featured-content {
+        background: var(--neutral-light);
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid var(--primary-blue);
+        margin: 2rem 0;
+      }
+      
+      .featured-content h3 {
+        color: var(--primary-blue);
+        margin-top: 0;
+      }
+      
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      
+      .nav-links a {
+        padding: 0.5rem 1rem;
+        background: var(--neutral-light);
+        border-radius: 6px;
+        font-weight: 500;
+        transition: background 0.3s ease;
+      }
+      
+      .nav-links a:hover {
+        background: var(--primary-blue);
+        color: white;
       }
     </style>
   </head>
   <body>
     <header>
-      <h1><a href="/"><span class="irish-flag"></span>{{ site.title }}</a></h1>
+      <div class="container">
+        <h1><a href="/">{{ site.title }}</a></h1>
+      </div>
     </header>
     <main>
-      {{ content }}
+      <div class="content-wrapper">
+        {{ content }}
+      </div>
     </main>
-    <div class="celtic-pattern"></div>
-    <footer>Powered by Grok from xAI | Updated daily | <em>Céad míle fáilte</em></footer>
+    <footer>
+      <p>Discover the best of Northern Ireland | Updated daily</p>
+    </footer>
   </body>
 </html>

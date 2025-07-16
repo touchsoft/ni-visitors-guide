@@ -7,8 +7,6 @@ categories: attractions museums history
 
 # Titanic Belfast: Where History Comes to Life
 
-<div class="celtic-pattern"></div>
-
 Standing majestically on the Belfast waterfront, Titanic Belfast is the world's largest Titanic visitor experience and a testament to Belfast's rich maritime heritage. Built on the exact site where the RMS Titanic was designed, built, and launched, this striking building tells the story of the ship that captured the world's imagination.
 
 ## The Building: An Architectural Marvel
