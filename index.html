@@ -1,71 +1,142 @@
 ---
 layout: default
 ---
-<div class="hero">
-  <div class="hero-content">
-    <h1>It's Here, It's Now, It's Northern Ireland</h1>
-    <p>Discover breathtaking landscapes, rich history, and vibrant culture in one of the world's most captivating destinations.</p>
-    <a href="#attractions" class="cta-button">Explore Now</a>
-  </div>
-</div>
-
-<div class="section">
-  <h2 class="section-title">Featured Stories</h2>
-  {% assign latest = site.posts | sort: 'date' | reverse | first %}
-  <div class="featured-section">
-    <div class="featured-content">
-      <h3>{{ latest.title }}</h3>
-      <p>{{ latest.content | truncatewords: 40 | strip_html }}</p>
-      <a href="{{ latest.url }}" class="card-button" style="margin-top: 1rem;">Read Full Story</a>
+<div class="hero-carousel">
+  <div class="carousel-container" id="carousel">
+    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1549918864-48ac978761a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="carousel-content">
+        <h1>Discover Northern Ireland</h1>
+        <p>Where ancient legends meet modern wonders</p>
+        <a href="#things-to-do" class="cta-button">Explore Now</a>
+      </div>
+    </div>
+    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+      <div class="carousel-content">
+        <h1>Experience Belfast</h1>
+        <p>A city of culture, history, and vibrant energy</p>
+        <a href="#things-to-do" class="cta-button">Discover More</a>
+      </div>
+    </div>
+    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="carousel-content">
+        <h1>Causeway Coast</h1>
+        <p>UNESCO World Heritage natural wonder</p>
+        <a href="#things-to-do" class="cta-button">Visit Today</a>
+      </div>
+    </div>
+    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="carousel-content">
+        <h1>Ancient Castles</h1>
+        <p>Step back in time through centuries of history</p>
+        <a href="#things-to-do" class="cta-button">Learn More</a>
+      </div>
     </div>
   </div>
+  <button class="carousel-arrow prev" onclick="changeSlide(-1)">‹</button>
+  <button class="carousel-arrow next" onclick="changeSlide(1)">›</button>
+  <div class="carousel-nav">
+    <div class="carousel-dot active" onclick="currentSlide(1)"></div>
+    <div class="carousel-dot" onclick="currentSlide(2)"></div>
+    <div class="carousel-dot" onclick="currentSlide(3)"></div>
+    <div class="carousel-dot" onclick="currentSlide(4)"></div>
+  </div>
 </div>
 
-<div class="section" id="attractions">
-  <h2 class="section-title">Must-See Attractions</h2>
-  <div class="cards-grid">
-    <div class="card">
-      <div class="card-image">🏔️</div>
-      <div class="card-content">
+<div class="section" id="things-to-do">
+  <h2 class="section-title">Things to do in Northern Ireland</h2>
+  <div class="things-grid">
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1549918864-48ac978761a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
         <h3>Giant's Causeway</h3>
-        <p>Marvel at 40,000 interlocking basalt columns formed by ancient volcanic activity. This UNESCO World Heritage Site combines natural wonder with legendary tales of giants.</p>
-        <a href="/attractions/natural-wonders/2024/07/16/giants-causeway-wonder.html" class="card-button">Explore</a>
+        <p>Marvel at 40,000 interlocking basalt columns formed by ancient volcanic activity. This UNESCO World Heritage Site combines natural wonder with legendary tales.</p>
       </div>
     </div>
-    <div class="card">
-      <div class="card-image">🚢</div>
-      <div class="card-content">
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+      <div class="thing-content">
         <h3>Titanic Belfast</h3>
-        <p>Experience the world's largest Titanic exhibition where the legendary ship was built. Interactive galleries bring the story of the ship and its passengers to life.</p>
-        <a href="/attractions/museums/history/2024/07/16/titanic-belfast-experience.html" class="card-button">Visit</a>
+        <p>Experience the world's largest Titanic exhibition where the legendary ship was built. Interactive galleries bring the story to life.</p>
       </div>
     </div>
-    <div class="card">
-      <div class="card-image">🏰</div>
-      <div class="card-content">
-        <h3>Carrick-a-Rede</h3>
-        <p>Cross the famous rope bridge suspended 30 meters above the Atlantic Ocean. Not for the faint of heart, but the views are absolutely spectacular.</p>
-        <a href="#" class="card-button">Discover</a>
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
+        <h3>Carrick-a-Rede Bridge</h3>
+        <p>Cross the famous rope bridge suspended 30 meters above the Atlantic Ocean. Not for the faint of heart, but the views are spectacular.</p>
+      </div>
+    </div>
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
+        <h3>Dunluce Castle</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1542756787-7f3171e7e2d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
+        <h3>Mourne Mountains</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
+        <h3>Peace Walls</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+    </div>
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
+        <h3>Bushmills Distillery</h3>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1542756787-7f3171e7e2d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
+        <h3>Glens of Antrim</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem.</p>
+      </div>
+    </div>
+    <div class="thing-tile" style="background-image: url('https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+      <div class="thing-content">
+        <h3>Dark Hedges</h3>
+        <p>Aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="section">
-  <h2 class="section-title">Plan Your Visit</h2>
-  <div class="nav-pills">
-    <a href="/articles" class="nav-pill">📚 All Articles</a>
-    <a href="/attractions" class="nav-pill">🎯 Top Attractions</a>
-    <a href="/tips" class="nav-pill">✈️ Travel Tips</a>
-    <a href="/culture" class="nav-pill">🏛️ Culture & Heritage</a>
-    <a href="/food" class="nav-pill">🍽️ Food & Drink</a>
-    <a href="/events" class="nav-pill">🎉 Events</a>
+<div class="bio-section">
+  <div class="bio-content">
+    <h2>Come and Dream in the Land of Legends</h2>
+    <p>Northern Ireland offers unforgettable experiences around every corner. From the dramatic coastlines of the Causeway Coast to the vibrant streets of Belfast, discover ancient castles, world-class museums, stunning natural landscapes, and warm hospitality that will make your visit truly memorable.</p>
+    <p>With its rich history, breathtaking scenery, and welcoming people, Northern Ireland is the perfect destination for those seeking adventure, culture, and natural beauty all in one place.</p>
+    <a href="/attractions" class="cta-button">Plan Your Visit</a>
   </div>
 </div>
 
-<div class="featured-section">
-  <div class="featured-content">
-    <h3>Why Visit Northern Ireland?</h3>
-    <p>From the dramatic coastlines of the Causeway Coast to the vibrant streets of Belfast, Northern Ireland offers unforgettable experiences around every corner. Discover ancient castles, world-class museums, stunning natural landscapes, and warm hospitality that will make your visit truly memorable.</p>
-  </div>
-</div>
+<script>
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.carousel-dot');
+const carousel = document.getElementById('carousel');
+
+function showSlide(index) {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[index].classList.add('active');
+}
+
+function changeSlide(direction) {
+  currentSlideIndex += direction;
+  if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
+  if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+  showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+  currentSlideIndex = index - 1;
+  showSlide(currentSlideIndex);
+}
+
+// Auto-advance carousel
+setInterval(() => {
+  changeSlide(1);
+}, 5000);
+</script>
