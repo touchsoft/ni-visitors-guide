@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Titanic Belfast: Where History Comes to Life"
-date: 2025-07-16 14:00:00 +0000
+date: 2024-07-16 14:00:00 +0000
 categories: attractions museums history
 ---
 

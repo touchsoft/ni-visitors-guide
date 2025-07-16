@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Giant's Causeway: A Natural Wonder of Northern Ireland"
-date: 2025-07-16 10:00:00 +0000
+date: 2024-07-16 10:00:00 +0000
 categories: attractions natural-wonders
 ---
 
