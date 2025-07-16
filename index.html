@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<h1>Welcome to Northern Ireland!</h1>
+<p><em>Fáilte!</em> Discover the enchanting beauty, rich history, and vibrant culture of Northern Ireland. From ancient legends to modern marvels, explore the treasures that make this corner of Ireland truly special.</p>
+
+<div class="celtic-pattern"></div>
+
+<h2>Featured Stories</h2>
+{% assign latest = site.posts | sort: 'date' | reverse | first %}
+<div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--irish-green); margin: 1rem 0;">
+  <h3>{{ latest.title }}</h3>
+  {{ latest.content | truncatewords: 50 }}
+  <a href="{{ latest.url }}" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--irish-green); color: white; border-radius: 4px; text-decoration: none;">Read Full Story</a>
+</div>
+
+<h2>Must-See Attractions</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+  <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-top: 4px solid var(--celtic-gold);">
+    <h3>🏔️ Giant's Causeway</h3>
+    <p>Marvel at 40,000 interlocking basalt columns formed by ancient volcanic activity. This UNESCO World Heritage Site combines natural wonder with legendary tales of giants.</p>
+  </div>
+  <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-top: 4px solid var(--celtic-gold);">
+    <h3>🚢 Titanic Belfast</h3>
+    <p>Experience the world's largest Titanic exhibition where the legendary ship was built. Interactive galleries bring the story of the ship and its passengers to life.</p>
+  </div>
+  <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-top: 4px solid var(--celtic-gold);">
+    <h3>🏰 Carrick-a-Rede</h3>
+    <p>Cross the famous rope bridge suspended 30 meters above the Atlantic Ocean. Not for the faint of heart, but the views are absolutely spectacular.</p>
+  </div>
+</div>
+
+<h2>Explore Northern Ireland</h2>
+<ul>
+  <li><a href="/articles">📚 All Articles & Stories</a></li>
+  <li><a href="/attractions">🎯 Top Attractions Guide</a></li>
+  <li><a href="/tips">✈️ Travel Tips & Advice</a></li>
+  <li><a href="/culture">🍀 Culture & Heritage</a></li>
+</ul>
+
+<div class="celtic-pattern"></div>
+
+<div style="background: linear-gradient(135deg, var(--emerald), var(--irish-green)); color: white; padding: 2rem; border-radius: 8px; text-align: center; margin: 2rem 0;">
+  <h2 style="color: white; border: none; margin-bottom: 1rem;">Experience the Magic</h2>
+  <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">From the dramatic coastlines of the Causeway to the bustling streets of Belfast, Northern Ireland offers unforgettable experiences around every corner.</p>
+  <p style="font-style: italic; opacity: 0.9;">"Céad míle fáilte" - A hundred thousand welcomes</p>
+</div>

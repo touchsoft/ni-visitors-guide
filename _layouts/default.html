@@ -4,14 +4,120 @@
   <head>
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="https://unpkg.com/minima@2.0.0/minima.css">
+    <style>
+      :root {
+        --irish-green: #009639;
+        --irish-orange: #ff7900;
+        --irish-white: #ffffff;
+        --celtic-gold: #d4af37;
+        --emerald: #50c878;
+        --stone-grey: #8b8680;
+      }
+      
+      body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, var(--irish-white) 0%, #f8f9fa 100%);
+        color: #2c3e50;
+        line-height: 1.6;
+      }
+      
+      header {
+        background: linear-gradient(135deg, var(--irish-green) 0%, var(--emerald) 100%);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-bottom: 4px solid var(--celtic-gold);
+      }
+      
+      header h1 a {
+        color: white;
+        text-decoration: none;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      header h1 a:hover {
+        color: var(--celtic-gold);
+        transition: color 0.3s ease;
+      }
+      
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      h1, h2, h3 {
+        color: var(--irish-green);
+        border-bottom: 2px solid var(--celtic-gold);
+        padding-bottom: 0.5rem;
+      }
+      
+      a {
+        color: var(--irish-green);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      a:hover {
+        color: var(--irish-orange);
+      }
+      
+      .celtic-pattern {
+        background: linear-gradient(45deg, var(--celtic-gold), var(--emerald));
+        height: 4px;
+        margin: 1rem 0;
+        border-radius: 2px;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      ul li {
+        padding: 0.5rem 0;
+        border-left: 4px solid var(--irish-green);
+        padding-left: 1rem;
+        margin: 0.5rem 0;
+        background: #f8f9fa;
+        border-radius: 4px;
+      }
+      
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background: var(--stone-grey);
+        color: white;
+        margin-top: 3rem;
+      }
+      
+      .irish-flag {
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        background: linear-gradient(to right, var(--irish-green) 33%, white 33% 66%, var(--irish-orange) 66%);
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1><a href="/">{{ site.title }}</a></h1>
+      <h1><a href="/"><span class="irish-flag"></span>{{ site.title }}</a></h1>
     </header>
     <main>
       {{ content }}
     </main>
-    <footer>Powered by Grok from xAI | Updated daily</footer>
+    <div class="celtic-pattern"></div>
+    <footer>Powered by Grok from xAI | Updated daily | <em>Céad míle fáilte</em></footer>
   </body>
 </html>
