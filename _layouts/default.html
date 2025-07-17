@@ -75,6 +75,11 @@
             color: white;
         }
         
+        /* Non-hero pages need padding for fixed navbar */
+        .no-hero {
+            padding-top: 80px;
+        }
+        
         .hero-section::before {
             content: '';
             position: absolute;
@@ -319,7 +324,7 @@
     </nav>
     
     <!-- Main Content -->
-    <main style="padding-top: 80px;">
+    <main>
         {{ content }}
     </main>
     
