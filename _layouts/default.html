@@ -341,8 +341,66 @@
         font-size: 1rem;
       }
       
-      /* Responsive */
-      @media (max-width: 768px) {
+      /* Responsive Design - Mobile First */
+      
+      /* Small devices (landscape phones, 576px and up) */
+      @media (max-width: 576px) {
+        .container {
+          padding: 0 1rem;
+        }
+        
+        .carousel-content h1 {
+          font-size: 2rem;
+        }
+        
+        .carousel-content p {
+          font-size: 1rem;
+        }
+        
+        .carousel-content {
+          padding: 0 1rem;
+        }
+        
+        .nav-menu {
+          display: none;
+        }
+        
+        .things-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        
+        .section {
+          padding: 2rem 0;
+        }
+        
+        .section-title {
+          font-size: 1.8rem;
+        }
+        
+        .bio-content h2 {
+          font-size: 1.5rem;
+        }
+        
+        .bio-content p {
+          font-size: 1rem;
+        }
+        
+        .main-content {
+          padding: 0 1rem;
+        }
+        
+        .thing-content h3 {
+          font-size: 1.2rem;
+        }
+        
+        .thing-content p {
+          font-size: 0.8rem;
+        }
+      }
+      
+      /* Medium devices (tablets, 768px and up) */
+      @media (min-width: 577px) and (max-width: 768px) {
         .carousel-content h1 {
           font-size: 2.5rem;
         }
@@ -356,7 +414,8 @@
         }
         
         .things-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
         }
         
         .section {
@@ -369,6 +428,197 @@
         
         .bio-content h2 {
           font-size: 2rem;
+        }
+      }
+      
+      /* Large devices (desktops, 992px and up) */
+      @media (min-width: 769px) and (max-width: 992px) {
+        .things-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .carousel-content h1 {
+          font-size: 3rem;
+        }
+        
+        .container {
+          padding: 0 1.5rem;
+        }
+        
+        .mobile-nav-indicator {
+          display: none;
+        }
+      }
+      
+      /* Extra large devices (large desktops, 1200px and up) */
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1200px;
+        }
+        
+        .main-content {
+          max-width: 1200px;
+        }
+        
+        .mobile-nav-indicator {
+          display: none;
+        }
+      }
+      
+      /* Mobile navigation improvements */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        
+        .logo {
+          font-size: 1.2rem;
+        }
+        
+        .navbar .container {
+          padding: 0 1rem;
+        }
+        
+        /* Mobile menu placeholder - could be enhanced with hamburger menu */
+        .nav-menu {
+          display: none;
+        }
+        
+        /* Mobile navigation breadcrumb - show current page */
+        .mobile-nav-indicator {
+          display: block;
+          text-align: center;
+          padding: 0.5rem 0;
+          background: rgba(26,54,93,0.1);
+          color: var(--primary-color);
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+        
+        /* Better mobile logo positioning */
+        .navbar .container {
+          justify-content: center;
+        }
+        
+        /* Better mobile hero sections */
+        .hero-section {
+          height: 40vh;
+          min-height: 300px;
+        }
+        
+        .hero-section h1 {
+          font-size: 2.5rem !important;
+        }
+        
+        .hero-section p {
+          font-size: 1.1rem !important;
+        }
+        
+        /* Responsive card grids for county/restaurant pages */
+        .county-card, .restaurant-card {
+          height: 200px !important;
+          margin-bottom: 1rem;
+        }
+        
+        .county-card h3, .restaurant-card h3 {
+          font-size: 1.4rem !important;
+        }
+        
+        .county-card p, .restaurant-card p {
+          font-size: 0.9rem !important;
+        }
+        
+        /* Better mobile restaurant detail cards */
+        .restaurant-info-grid {
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+        }
+        
+        /* Improve padding and spacing on mobile */
+        .section {
+          padding: 2rem 1rem !important;
+        }
+        
+        .hero-section > div {
+          padding: 0 1rem !important;
+        }
+        
+        /* Better mobile form elements */
+        .cta-button {
+          padding: 0.8rem 1.5rem !important;
+          font-size: 0.9rem !important;
+        }
+        
+        /* Mobile-specific carousel improvements */
+        .carousel-arrow {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 1.2rem !important;
+        }
+        
+        .carousel-arrow.prev {
+          left: 15px !important;
+        }
+        
+        .carousel-arrow.next {
+          right: 15px !important;
+        }
+      }
+      
+      /* Tablet improvements */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .hero-section h1 {
+          font-size: 3rem !important;
+        }
+        
+        .hero-section p {
+          font-size: 1.3rem !important;
+        }
+        
+        /* Tablet grid improvements */
+        .county-card, .restaurant-card {
+          height: 220px;
+        }
+        
+        .restaurant-info-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 1rem;
+        }
+        
+        .section {
+          padding: 3rem 1.5rem;
+        }
+      }
+      
+      /* Additional responsive utilities */
+      @media (max-width: 480px) {
+        .hero-section {
+          height: 35vh;
+          min-height: 250px;
+        }
+        
+        .hero-section h1 {
+          font-size: 2rem !important;
+        }
+        
+        .hero-section p {
+          font-size: 1rem !important;
+        }
+        
+        .section-title {
+          font-size: 1.5rem !important;
+        }
+        
+        .county-card, .restaurant-card {
+          height: 180px !important;
+        }
+        
+        .county-card h3, .restaurant-card h3 {
+          font-size: 1.2rem !important;
+        }
+        
+        .footer {
+          padding: 2rem 1rem 1rem !important;
         }
       }
     </style>

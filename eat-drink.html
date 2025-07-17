@@ -85,4 +85,42 @@ title: Eat & Drink
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+
+/* Mobile responsive improvements for county grid */
+@media (max-width: 768px) {
+  .county-card {
+    height: 200px !important;
+    margin-bottom: 1rem;
+  }
+  
+  .county-card h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  .county-card p {
+    font-size: 0.9rem !important;
+  }
+  
+  .county-card > div:last-child {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .county-card {
+    height: 180px !important;
+  }
+  
+  .county-card h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .county-card p {
+    font-size: 0.8rem !important;
+  }
+  
+  .county-card > div:last-child {
+    padding: 1rem !important;
+  }
+}
 </style>
