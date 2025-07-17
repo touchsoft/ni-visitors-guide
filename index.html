@@ -1,152 +1,178 @@
 ---
 layout: default
 ---
-<div class="hero-carousel">
-  <div class="carousel-container" id="carousel">
-    <div class="carousel-slide" style="background-image: url('{{ "/assets/images/giants-causeway.jpg" | relative_url }}');">
-      <div class="carousel-content">
-        <h1>Discover Northern Ireland</h1>
-        <p>Where ancient legends meet modern wonders</p>
-        <a href="#things-to-do" class="cta-button">Explore Now</a>
+
+<!-- Hero Carousel -->
+<div id="heroCarousel" class="carousel slide hero-section" data-bs-ride="carousel" style="background-image: url('{{ "/assets/images/giants-causeway.jpg" | relative_url }}');">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+  </div>
+  
+  <div class="carousel-inner h-100">
+    <div class="carousel-item active h-100 d-flex align-items-center" style="background-image: url('{{ "/assets/images/giants-causeway.jpg" | relative_url }}');">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center hero-content">
+            <h1 class="display-2 fw-bold">Discover Northern Ireland</h1>
+            <p class="lead">Where ancient legends meet modern wonders</p>
+            <a href="#things-to-do" class="btn btn-primary btn-lg mt-3">Explore Now</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="carousel-slide" style="background-image: url('{{ "/assets/images/Titanic_Belfast_HDR.jpg" | relative_url }}');">
-      <div class="carousel-content">
-        <h1>Experience Belfast</h1>
-        <p>A city of culture, history, and vibrant energy</p>
-        <a href="#things-to-do" class="cta-button">Discover More</a>
+    
+    <div class="carousel-item h-100 d-flex align-items-center" style="background-image: url('{{ "/assets/images/Titanic_Belfast_HDR.jpg" | relative_url }}');">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center hero-content">
+            <h1 class="display-2 fw-bold">Experience Belfast</h1>
+            <p class="lead">A city of culture, history, and vibrant energy</p>
+            <a href="#things-to-do" class="btn btn-primary btn-lg mt-3">Discover More</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="carousel-slide" style="background-image: url('{{ "/assets/images/2880px-Carrick-a-rede_rope_bridge_2.jpg" | relative_url }}');">
-      <div class="carousel-content">
-        <h1>Causeway Coast</h1>
-        <p>UNESCO World Heritage natural wonder</p>
-        <a href="#things-to-do" class="cta-button">Visit Today</a>
+    
+    <div class="carousel-item h-100 d-flex align-items-center" style="background-image: url('{{ "/assets/images/2880px-Carrick-a-rede_rope_bridge_2.jpg" | relative_url }}');">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center hero-content">
+            <h1 class="display-2 fw-bold">Causeway Coast</h1>
+            <p class="lead">UNESCO World Heritage natural wonder</p>
+            <a href="#things-to-do" class="btn btn-primary btn-lg mt-3">Visit Today</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="carousel-slide" style="background-image: url('{{ "/assets/images/3240px-Dunluce_Castle_Northern_Ireland_1.jpg" | relative_url }}');">
-      <div class="carousel-content">
-        <h1>Ancient Castles</h1>
-        <p>Step back in time through centuries of history</p>
-        <a href="#things-to-do" class="cta-button">Learn More</a>
+    
+    <div class="carousel-item h-100 d-flex align-items-center" style="background-image: url('{{ "/assets/images/3240px-Dunluce_Castle_Northern_Ireland_1.jpg" | relative_url }}');">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center hero-content">
+            <h1 class="display-2 fw-bold">Ancient Castles</h1>
+            <p class="lead">Step back in time through centuries of history</p>
+            <a href="#things-to-do" class="btn btn-primary btn-lg mt-3">Learn More</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <button class="carousel-arrow prev" onclick="changeSlide(-1)">‹</button>
-  <button class="carousel-arrow next" onclick="changeSlide(1)">›</button>
-  <div class="carousel-nav">
-    <div class="carousel-dot active" onclick="currentSlide(1)"></div>
-    <div class="carousel-dot" onclick="currentSlide(2)"></div>
-    <div class="carousel-dot" onclick="currentSlide(3)"></div>
-    <div class="carousel-dot" onclick="currentSlide(4)"></div>
-  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
 
+<!-- Things to Do Section -->
 <div class="section" id="things-to-do">
-  <h2 class="section-title">Things to do in Northern Ireland</h2>
-  <div class="things-grid">
-    <a href="{{ "/giants-causeway.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/giants-causeway-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Giant's Causeway</h3>
-        <p>Marvel at 40,000 interlocking basalt columns formed by ancient volcanic activity. This UNESCO World Heritage Site combines natural wonder with legendary tales.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Things to do in Northern Ireland</h2>
       </div>
-    </a>
-    <a href="{{ "/titanic-belfast.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/Titanic_Belfast_HDR-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Titanic Belfast</h3>
-        <p>Experience the world's largest Titanic exhibition where the legendary ship was built. Interactive galleries bring the story to life.</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/giants-causeway.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/giants-causeway-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Giant's Causeway</h5>
+            <p class="card-text">Marvel at 40,000 interlocking basalt columns formed by ancient volcanic activity. This UNESCO World Heritage Site combines natural wonder with legendary tales.</p>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="{{ "/carrick-a-rede-bridge.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/2880px-Carrick-a-rede_rope_bridge_2-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Carrick-a-Rede Bridge</h3>
-        <p>Cross the famous rope bridge suspended 30 meters above the Atlantic Ocean. Not for the faint of heart, but the views are spectacular.</p>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/titanic-belfast.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/Titanic_Belfast_HDR-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Titanic Belfast</h5>
+            <p class="card-text">Experience the world's largest Titanic exhibition where the legendary ship was built. Interactive galleries bring the story to life.</p>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="{{ "/dunluce-castle.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/3240px-Dunluce_Castle_Northern_Ireland_1-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Dunluce Castle</h3>
-        <p>Explore the dramatic ruins of this medieval castle perched on clifftops, offering spectacular views of the Antrim coastline and the Atlantic Ocean.</p>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/carrick-a-rede-bridge.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/2880px-Carrick-a-rede_rope_bridge_2-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Carrick-a-Rede Bridge</h5>
+            <p class="card-text">Cross the famous rope bridge suspended 30 meters above the Atlantic Ocean. Not for the faint of heart, but the views are spectacular.</p>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="{{ "/mourne-mountains.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/mourne-mountains-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Mourne Mountains</h3>
-        <p>Conquer Northern Ireland's highest peaks and explore the stunning granite mountains that inspired C.S. Lewis's Chronicles of Narnia.</p>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/dunluce-castle.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/3240px-Dunluce_Castle_Northern_Ireland_1-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Dunluce Castle</h5>
+            <p class="card-text">Explore the dramatic ruins of this medieval castle perched on clifftops, offering spectacular views of the Antrim coastline and the Atlantic Ocean.</p>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="{{ "/belfast-murals.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/belfast-murals-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Belfast Murals</h3>
-        <p>Discover the world's most famous political street art that tells the story of Belfast's complex history and journey to peace.</p>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/mourne-mountains.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/mourne-mountains-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Mourne Mountains</h5>
+            <p class="card-text">Conquer Northern Ireland's highest peaks and explore the stunning granite mountains that inspired C.S. Lewis's Chronicles of Narnia.</p>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="{{ "/old-bushmills-distillery.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/Distillery_OldBushmills-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Old Bushmills Distillery</h3>
-        <p>Visit the world's oldest licensed whiskey distillery and sample premium Irish whiskey made with traditional methods since 1608.</p>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/belfast-murals.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/belfast-murals-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Belfast Murals</h5>
+            <p class="card-text">Discover the world's most famous political street art that tells the story of Belfast's complex history and journey to peace.</p>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="{{ "/glens-of-antrim.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/Glens-of-antrim-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Glens of Antrim</h3>
-        <p>Explore nine scenic valleys running from the Antrim Mountains to the sea, steeped in Celtic history and natural beauty.</p>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/old-bushmills-distillery.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/Distillery_OldBushmills-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Old Bushmills Distillery</h5>
+            <p class="card-text">Visit the world's oldest licensed whiskey distillery and sample premium Irish whiskey made with traditional methods since 1608.</p>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="{{ "/dark-hedges.html" | relative_url }}" class="thing-tile" style="background-image: url('{{ "/assets/images/dark-hedges-thumb.jpg" | relative_url }}');">
-      <div class="thing-content">
-        <h3>Dark Hedges</h3>
-        <p>Walk through the famous tree tunnel that served as the Kingsroad in Game of Thrones and discover the legend of the Grey Lady.</p>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/glens-of-antrim.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/Glens-of-antrim-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Glens of Antrim</h5>
+            <p class="card-text">Explore nine scenic valleys running from the Antrim Mountains to the sea, steeped in Celtic history and natural beauty.</p>
+          </div>
+        </a>
       </div>
-    </a>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/dark-hedges.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/dark-hedges-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">Dark Hedges</h5>
+            <p class="card-text">Walk through the famous tree tunnel that served as the Kingsroad in Game of Thrones and discover the legend of the Grey Lady.</p>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="bio-section">
-  <div class="bio-content">
-    <h2>Come and Dream in the Land of Legends</h2>
-    <p>Northern Ireland offers unforgettable experiences around every corner. From the dramatic coastlines of the Causeway Coast to the vibrant streets of Belfast, discover ancient castles, world-class museums, stunning natural landscapes, and warm hospitality that will make your visit truly memorable.</p>
-    <p>With its rich history, breathtaking scenery, and welcoming people, Northern Ireland is the perfect destination for those seeking adventure, culture, and natural beauty all in one place.</p>
-    <a href="/attractions" class="cta-button">Plan Your Visit</a>
+<!-- Bio Section -->
+<div class="section bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="section-title">Come and Dream in the Land of Legends</h2>
+        <p class="lead mb-4">Northern Ireland offers unforgettable experiences around every corner. From the dramatic coastlines of the Causeway Coast to the vibrant streets of Belfast, discover ancient castles, world-class museums, stunning natural landscapes, and warm hospitality that will make your visit truly memorable.</p>
+        <p class="mb-4">With its rich history, breathtaking scenery, and welcoming people, Northern Ireland is the perfect destination for those seeking adventure, culture, and natural beauty all in one place.</p>
+        <a href="/attractions" class="btn btn-primary btn-lg">Plan Your Visit</a>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="credits-section">
-  <div class="credits-content">
-    <h3>Photo Credits</h3>
-    <p><strong>Giant's Causeway:</strong> <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank">Photo by Zhifei Zhou on Unsplash</a></p>
-    <p><strong>Titanic Belfast:</strong> By Own work - Own work, <a href="https://commons.wikimedia.org/w/index.php?curid=19087088" target="_blank">CC BY-SA 4.0</a></p>
-    <p><strong>Carrick-a-Rede Bridge:</strong> By Sheila1988 - Own work, <a href="https://commons.wikimedia.org/w/index.php?curid=75235186" target="_blank">CC BY-SA 4.0</a></p>
-    <p><strong>Dunluce Castle:</strong> By Iain Irwin - Own work, <a href="https://commons.wikimedia.org/w/index.php?curid=78798618" target="_blank">CC BY-SA 4.0</a></p>
-  </div>
-</div>
-
-<script>
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const dots = document.querySelectorAll('.carousel-dot');
-const carousel = document.getElementById('carousel');
-
-function showSlide(index) {
-  carousel.style.transform = `translateX(-${index * 100}%)`;
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
-}
-
-function changeSlide(direction) {
-  currentSlideIndex += direction;
-  if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
-  if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
-  showSlide(currentSlideIndex);
-}
-
-function currentSlide(index) {
-  currentSlideIndex = index - 1;
-  showSlide(currentSlideIndex);
-}
-
-// Auto-advance carousel
-setInterval(() => {
-  changeSlide(1);
-}, 5000);
-</script>

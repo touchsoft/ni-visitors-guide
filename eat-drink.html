@@ -3,124 +3,86 @@ layout: default
 title: Eat & Drink
 ---
 
-<div class="hero-section" style="background: linear-gradient(135deg, #38a169 0%, rgba(56,161,105,0.8) 100%), url('{{ "/assets/images/k-mitch-hodge.jpg" | relative_url }}'); background-size: cover; background-position: center; height: 50vh; display: flex; align-items: center; justify-content: center; margin-top: 70px;">
-  <div style="text-align: center; color: white; z-index: 2; position: relative; max-width: 800px; padding: 0 2rem;">
-    <h1 style="font-size: 4rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Eat & Drink</h1>
-    <p style="font-size: 1.5rem; opacity: 0.95; font-weight: 300;">Taste Northern Ireland's finest cuisine across six counties</p>
+<div class="hero-section" style="background-image: url('{{ "/assets/images/k-mitch-hodge.jpg" | relative_url }}');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center hero-content">
+        <h1 class="display-2 fw-bold">Eat & Drink</h1>
+        <p class="lead">Taste Northern Ireland's finest cuisine across six counties</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="section">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem;">Choose Your County</h2>
-      <p style="font-size: 1.2rem; color: var(--medium-grey); line-height: 1.8; max-width: 600px; margin: 0 auto;">
-        Northern Ireland's culinary scene spans six counties, each offering unique flavors, local specialties, and exceptional dining experiences. 
-        Select a county to discover the best restaurants, pubs, and cafes during your visit.
-      </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Choose Your County</h2>
+        <p class="lead mb-5">Northern Ireland's culinary scene spans six counties, each offering unique flavors, local specialties, and exceptional dining experiences. Select a county to discover the best restaurants, pubs, and cafes during your visit.</p>
+      </div>
     </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+    
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/county-antrim-restaurants.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/giants-causeway-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Antrim</h5>
+            <p class="card-text">Coastal dining and Belfast's culinary scene</p>
+            <span class="badge">5 Restaurants</span>
+          </div>
+        </a>
+      </div>
       
-      <a href="{{ "/county-antrim-restaurants.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #1a365d 0%, rgba(26,54,93,0.8) 100%), url('{{ "/assets/images/giants-causeway-thumb.jpg" | relative_url }}'); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Antrim</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Coastal dining and Belfast's culinary scene</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Restaurants</div>
-        </div>
-      </a>
-
-      <a href="{{ "/county-armagh-restaurants.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #2c5282 0%, rgba(44,82,130,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Armagh</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Orchard County cuisine and traditional Irish fare</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Restaurants</div>
-        </div>
-      </a>
-
-      <a href="{{ "/county-down-restaurants.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #38a169 0%, rgba(56,161,105,0.8) 100%), url('{{ "/assets/images/mourne-mountains-thumb.jpg" | relative_url }}'); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Down</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Mountain dining and coastal seafood specialties</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Restaurants</div>
-        </div>
-      </a>
-
-      <a href="{{ "/county-fermanagh-restaurants.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #d69e2e 0%, rgba(214,158,46,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Fermanagh</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Lakeland dining and artisan food producers</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Restaurants</div>
-        </div>
-      </a>
-
-      <a href="{{ "/county-londonderry-restaurants.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #e53e3e 0%, rgba(229,62,62,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Londonderry</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Derry's vibrant food scene and coastal cuisine</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Restaurants</div>
-        </div>
-      </a>
-
-      <a href="{{ "/county-tyrone-restaurants.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #805ad5 0%, rgba(128,90,213,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Tyrone</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Rural gastropubs and traditional Ulster cooking</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Restaurants</div>
-        </div>
-      </a>
-
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/county-armagh-restaurants.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #2c5282 0%, rgba(44,82,130,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Armagh</h5>
+            <p class="card-text">Orchard County cuisine and traditional Irish fare</p>
+            <span class="badge">5 Restaurants</span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/county-down-restaurants.html" | relative_url }}" class="county-card text-decoration-none" style="background-image: url('{{ "/assets/images/mourne-mountains-thumb.jpg" | relative_url }}');">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Down</h5>
+            <p class="card-text">Mountain dining and coastal seafood specialties</p>
+            <span class="badge">5 Restaurants</span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/county-fermanagh-restaurants.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #d69e2e 0%, rgba(214,158,46,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Fermanagh</h5>
+            <p class="card-text">Lakeland dining and artisan food producers</p>
+            <span class="badge">5 Restaurants</span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/county-londonderry-restaurants.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #e53e3e 0%, rgba(229,62,62,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Londonderry</h5>
+            <p class="card-text">Derry's vibrant food scene and coastal cuisine</p>
+            <span class="badge">5 Restaurants</span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <a href="{{ "/county-tyrone-restaurants.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #805ad5 0%, rgba(128,90,213,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Tyrone</h5>
+            <p class="card-text">Rural gastropubs and traditional Ulster cooking</p>
+            <span class="badge">5 Restaurants</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
-
-<style>
-.county-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* Mobile responsive improvements for county grid */
-@media (max-width: 768px) {
-  .county-card {
-    height: 200px !important;
-    margin-bottom: 1rem;
-  }
-  
-  .county-card h3 {
-    font-size: 1.4rem !important;
-  }
-  
-  .county-card p {
-    font-size: 0.9rem !important;
-  }
-  
-  .county-card > div:last-child {
-    padding: 1.5rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .county-card {
-    height: 180px !important;
-  }
-  
-  .county-card h3 {
-    font-size: 1.2rem !important;
-  }
-  
-  .county-card p {
-    font-size: 0.8rem !important;
-  }
-  
-  .county-card > div:last-child {
-    padding: 1rem !important;
-  }
-}
-</style>

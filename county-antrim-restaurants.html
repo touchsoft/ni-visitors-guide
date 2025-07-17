@@ -3,162 +3,221 @@ layout: default
 title: County Antrim Restaurants
 ---
 
-<div class="hero-section" style="background-image: url('{{ "/assets/images/giants-causeway.jpg" | relative_url }}'); height: 50vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: center; justify-content: center; margin-top: 70px;">
-  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
-  <div style="text-align: center; color: white; z-index: 2; position: relative; max-width: 800px; padding: 0 2rem;">
-    <h1 style="font-size: 4rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">County Antrim</h1>
-    <p style="font-size: 1.5rem; opacity: 0.95; font-weight: 300;">Coastal dining and Belfast's culinary scene</p>
-  </div>
-</div>
-
-<div class="section">
-  <div style="max-width: 1000px; margin: 0 auto;">
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem;">Where to Eat in County Antrim</h2>
-      <p style="font-size: 1.2rem; color: var(--medium-grey); line-height: 1.8; max-width: 800px; margin: 0 auto;">
-        County Antrim offers exceptional dining from Belfast's award-winning restaurants to traditional coastal pubs, 
-        perfectly positioned for exploring the Giant's Causeway and vibrant city cuisine.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;" class="restaurant-list">
-      
-      <!-- The Ginger Bistro -->
-      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-        <div style="padding: 2rem;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">The Ginger Bistro</h3>
-          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
-            Once voted the best restaurant in Northern Ireland, this multi-award winning bistro has been operating since 2000. Located near Belfast Opera House, Europa Hotel and the Crown Bar, it offers adventurous menu options with impeccable service.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;" class="restaurant-info-grid">
-            <div>
-              <strong style="color: var(--dark-grey);">Location:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">68/72 Great Victoria Street, Belfast</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Type:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">Fine Dining</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Phone:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">028 9024 4421</p>
-            </div>
-          </div>
-          <a href="https://www.gingerbistro.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
+<div class="hero-section position-relative d-flex align-items-center justify-content-center" style="background-image: url('{{ "/assets/images/giants-causeway.jpg" | relative_url }}'); height: 50vh; margin-top: 70px;">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.5);"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="hero-content text-center text-white position-relative">
+          <h1 class="display-1 fw-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">County Antrim</h1>
+          <p class="lead fw-light">Coastal dining and Belfast's culinary scene</p>
         </div>
       </div>
-
-      <!-- The Bushmills Inn Restaurant -->
-      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-        <div style="padding: 2rem;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">The Bushmills Inn Restaurant</h3>
-          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
-            A luxury hotel with an AA Rosette restaurant, one of Ireland's most well-known luxurious hotels. Features open turf fires, gas lights, and hidden nooks. Offers fine & al fresco dining on the Patio, Sunday carvery lunch, and dining in the Gas Bar.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;" class="restaurant-info-grid">
-            <div>
-              <strong style="color: var(--dark-grey);">Location:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">Bushmills, County Antrim</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Type:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">Fine Dining/Traditional Inn</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Phone:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">028 2073 3000</p>
-            </div>
-          </div>
-          <a href="https://www.bushmillsinn.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
-        </div>
-      </div>
-
-      <!-- The Harbour Bistro -->
-      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-        <div style="padding: 2rem;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">The Harbour Bistro</h3>
-          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
-            Located within one of Northern Ireland's oldest pubs, part of The Ramore Family of Restaurants. Nestled in the picturesque seaside town of Portrush along the breathtaking North Antrim coast, celebrating barbeque dining with rustic authenticity.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;" class="restaurant-info-grid">
-            <div>
-              <strong style="color: var(--dark-grey);">Location:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">Harbour Road, Portrush</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Type:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">Casual Dining/Seafood</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Phone:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">028 7082 2430</p>
-            </div>
-          </div>
-          <a href="https://ramorerestaurant.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
-        </div>
-      </div>
-
-      <!-- Ownies Bar and Bistro -->
-      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-        <div style="padding: 2rem;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Ownies Bar and Bistro</h3>
-          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
-            Recognized as one of Ireland's finest Gastro Pubs, offering the highest standards of service and food while maintaining the warm atmosphere of an Irish Pub. Located in the heart of Carrick near the historical Carrickfergus Castle, famous for its seafood chowder.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;" class="restaurant-info-grid">
-            <div>
-              <strong style="color: var(--dark-grey);">Location:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">16-18 Joymount, Carrickfergus</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Type:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">Gastro Pub</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Phone:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">028 9335 1850</p>
-            </div>
-          </div>
-          <a href="https://www.owniesbarbistro.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
-        </div>
-      </div>
-
-      <!-- Brown Trout Golf & Country Inn -->
-      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-        <div style="padding: 2rem;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Brown Trout Golf & Country Inn</h3>
-          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
-            Owned and managed by the O'Hara family for four generations, this 3-star country inn is located just 10 minutes from Coleraine and 20 minutes from the North Coast. Traditional Irish hospitality with quality dining in a scenic rural setting.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;" class="restaurant-info-grid">
-            <div>
-              <strong style="color: var(--dark-grey);">Location:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">209 Agivey Road, Aghadowey</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Type:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">Country Inn Restaurant</p>
-            </div>
-            <div>
-              <strong style="color: var(--dark-grey);">Phone:</strong>
-              <p style="color: var(--medium-grey); margin: 0;">028 7086 8209</p>
-            </div>
-          </div>
-          <a href="https://browntroutinn.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
 
-<div style="background: var(--light-grey); padding: 3rem 2rem; text-align: center; margin-top: 4rem;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 1rem;">Dining in County Antrim</h3>
-    <p style="color: var(--medium-grey); line-height: 1.8; margin-bottom: 2rem;">
-      County Antrim offers exceptional dining from Belfast's award-winning restaurants to traditional coastal pubs. 
-      Experience the perfect blend of fine dining, fresh seafood, and warm Irish hospitality.
-    </p>
-    <a href="{{ "/eat-drink.html" | relative_url }}" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Back to Counties</a>
+<div class="section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="text-center mb-5">
+          <h2 class="section-title display-4 fw-bold text-dark mb-4">Where to Eat in County Antrim</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <p class="lead text-muted lh-lg">
+                County Antrim offers exceptional dining from Belfast's award-winning restaurants to traditional coastal pubs, 
+                perfectly positioned for exploring the Giant's Causeway and vibrant city cuisine.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- The Ginger Bistro -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">The Ginger Bistro</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Once voted the best restaurant in Northern Ireland, this multi-award winning bistro has been operating since 2000. Located near Belfast Opera House, Europa Hotel and the Crown Bar, it offers adventurous menu options with impeccable service.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">68/72 Great Victoria Street, Belfast</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Fine Dining</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 9024 4421</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.gingerbistro.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Bushmills Inn Restaurant -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">The Bushmills Inn Restaurant</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  A luxury hotel with an AA Rosette restaurant, one of Ireland's most well-known luxurious hotels. Features open turf fires, gas lights, and hidden nooks. Offers fine & al fresco dining on the Patio, Sunday carvery lunch, and dining in the Gas Bar.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">Bushmills, County Antrim</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Fine Dining/Traditional Inn</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 2073 3000</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.bushmillsinn.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Harbour Bistro -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">The Harbour Bistro</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Located within one of Northern Ireland's oldest pubs, part of The Ramore Family of Restaurants. Nestled in the picturesque seaside town of Portrush along the breathtaking North Antrim coast, celebrating barbeque dining with rustic authenticity.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">Harbour Road, Portrush</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Casual Dining/Seafood</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 7082 2430</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://ramorerestaurant.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ownies Bar and Bistro -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">Ownies Bar and Bistro</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Recognized as one of Ireland's finest Gastro Pubs, offering the highest standards of service and food while maintaining the warm atmosphere of an Irish Pub. Located in the heart of Carrick near the historical Carrickfergus Castle, famous for its seafood chowder.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">16-18 Joymount, Carrickfergus</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Gastro Pub</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 9335 1850</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.owniesbarbistro.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brown Trout Golf & Country Inn -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">Brown Trout Golf & Country Inn</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Owned and managed by the O'Hara family for four generations, this 3-star country inn is located just 10 minutes from Coleraine and 20 minutes from the North Coast. Traditional Irish hospitality with quality dining in a scenic rural setting.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">209 Agivey Road, Aghadowey</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Country Inn Restaurant</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 7086 8209</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://browntroutinn.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-light py-5 mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center">
+          <h3 class="h4 fw-semibold text-dark mb-4">Dining in County Antrim</h3>
+          <p class="text-muted lh-lg mb-4">
+            County Antrim offers exceptional dining from Belfast's award-winning restaurants to traditional coastal pubs. 
+            Experience the perfect blend of fine dining, fresh seafood, and warm Irish hospitality.
+          </p>
+          <a href="{{ "/eat-drink.html" | relative_url }}" class="btn btn-primary">Back to Counties</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
