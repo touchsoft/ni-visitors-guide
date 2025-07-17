@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   <head>
@@ -82,77 +83,6 @@
         color: var(--primary-color);
       }
       
-      /* Default mobile menu toggle hidden */
-      .mobile-menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--primary-color);
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0.5rem;
-        z-index: 1001;
-      }
-      
-      /* Mobile menu overlay */
-      .mobile-menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.5);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-      
-      .mobile-menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      /* Mobile menu styles */
-      .mobile-menu {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-      }
-      
-      .mobile-menu.active {
-        transform: translateY(0);
-      }
-      
-      .mobile-menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      
-      .mobile-menu li {
-        border-bottom: 1px solid var(--border-grey);
-      }
-      
-      .mobile-menu a {
-        display: block;
-        padding: 1rem 2rem;
-        color: var(--dark-grey);
-        text-decoration: none;
-        font-weight: 500;
-        transition: background 0.3s ease;
-      }
-      
-      .mobile-menu a:hover {
-        background: var(--light-grey);
-      }
-      
       /* Hero Carousel */
       .hero-carousel {
         position: relative;
@@ -211,6 +141,58 @@
         margin-bottom: 2.5rem;
         opacity: 0.95;
         font-weight: 300;
+      }
+      
+      .carousel-nav {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 1rem;
+        z-index: 10;
+      }
+      
+      .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .carousel-dot.active {
+        background: white;
+        transform: scale(1.2);
+      }
+      
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.2);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+      
+      .carousel-arrow:hover {
+        background: rgba(255,255,255,0.3);
+      }
+      
+      .carousel-arrow.prev {
+        left: 30px;
+      }
+      
+      .carousel-arrow.next {
+        right: 30px;
       }
       
       /* Main Content */
@@ -296,6 +278,55 @@
         line-height: 1.4;
       }
       
+      /* Bio Section */
+      .bio-section {
+        background: var(--light-grey);
+        padding: 6rem 2rem;
+        margin: 5rem 0;
+        text-align: center;
+      }
+      
+      .bio-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .bio-content h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--dark-grey);
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+      
+      .bio-content p {
+        font-size: 1.2rem;
+        color: var(--medium-grey);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .cta-button:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(26,54,93,0.3);
+        color: white;
+      }
+      
       /* Footer */
       .footer {
         background: var(--dark-grey);
@@ -310,26 +341,66 @@
         font-size: 1rem;
       }
       
-      /* Mobile responsive */
-      @media (max-width: 768px) {
-        .navbar .container {
+      /* Responsive Design - Mobile First */
+      
+      /* Small devices (landscape phones, 576px and up) */
+      @media (max-width: 576px) {
+        .container {
           padding: 0 1rem;
         }
         
-        .logo {
-          font-size: 1.2rem;
+        .carousel-content h1 {
+          font-size: 2rem;
         }
         
-        /* Hide desktop menu on mobile */
+        .carousel-content p {
+          font-size: 1rem;
+        }
+        
+        .carousel-content {
+          padding: 0 1rem;
+        }
+        
         .nav-menu {
           display: none !important;
         }
         
-        /* Show mobile menu toggle button */
-        .mobile-menu-toggle {
-          display: block !important;
+        .things-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
         }
         
+        .section {
+          padding: 2rem 0;
+        }
+        
+        .section-title {
+          font-size: 1.8rem;
+        }
+        
+        .bio-content h2 {
+          font-size: 1.5rem;
+        }
+        
+        .bio-content p {
+          font-size: 1rem;
+        }
+        
+        .main-content {
+          padding: 0 1rem;
+        }
+        
+        .thing-content h3 {
+          font-size: 1.2rem;
+        }
+        
+        .thing-content p {
+          font-size: 0.8rem;
+        }
+      }
+      
+      /* Medium devices (tablets, 768px and up) */
+      @media (min-width: 577px) and (max-width: 768px) {
         .carousel-content h1 {
           font-size: 2.5rem;
         }
@@ -338,8 +409,12 @@
           font-size: 1.2rem;
         }
         
+        .nav-menu {
+          display: none !important;
+        }
+        
         .things-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
         }
         
@@ -351,23 +426,295 @@
           font-size: 2rem;
         }
         
-        .main-content {
-          padding: 0 1rem;
+        .bio-content h2 {
+          font-size: 2rem;
         }
       }
       
-      @media (max-width: 480px) {
-        .carousel-content h1 {
-          font-size: 2rem;
+      /* Large devices (desktops, 992px and up) */
+      @media (min-width: 769px) and (max-width: 992px) {
+        .things-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
         
-        .carousel-content p {
-          font-size: 1rem;
+        .carousel-content h1 {
+          font-size: 3rem;
+        }
+        
+        .container {
+          padding: 0 1.5rem;
+        }
+        
+        .mobile-nav-indicator {
+          display: none;
+        }
+      }
+      
+      /* Extra large devices (large desktops, 1200px and up) */
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1200px;
+        }
+        
+        .main-content {
+          max-width: 1200px;
+        }
+        
+        .mobile-nav-indicator {
+          display: none;
+        }
+      }
+      
+      /* Mobile navigation improvements */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        
+        .logo {
+          font-size: 1.2rem;
+        }
+        
+        .navbar .container {
+          padding: 0 1rem;
+        }
+        
+        /* Hide desktop menu on mobile */
+        .nav-menu {
+          display: none !important;
+        }
+        
+        /* Mobile navigation breadcrumb - show current page */
+        .mobile-nav-indicator {
+          display: block;
+          text-align: center;
+          padding: 0.5rem 0;
+          background: rgba(26,54,93,0.1);
+          color: var(--primary-color);
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+        
+        /* Better mobile logo positioning */
+        .navbar .container {
+          justify-content: space-between;
+        }
+        
+        /* Show mobile menu toggle button */
+        .mobile-menu-toggle {
+          display: block !important;
+          background: none;
+          border: none;
+          color: var(--primary-color);
+          font-size: 1.5rem;
+          cursor: pointer;
+          padding: 0.5rem;
+          z-index: 1001;
+        }
+        
+        /* Mobile menu overlay */
+        .mobile-menu-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0,0,0,0.5);
+          z-index: 999;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: var(--white);
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          transform: translateY(-100%);
+          transition: transform 0.3s ease;
+          z-index: 1000;
+        }
+        
+        .mobile-menu.active {
+          transform: translateY(0);
+        }
+        
+        .mobile-menu ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .mobile-menu li {
+          border-bottom: 1px solid var(--border-grey);
+        }
+        
+        .mobile-menu a {
+          display: block;
+          padding: 1rem 2rem;
+          color: var(--dark-grey);
+          text-decoration: none;
+          font-weight: 500;
+          transition: background 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+          background: var(--light-grey);
+        }
+        
+        /* Better mobile hero sections */
+        .hero-section {
+          height: 40vh;
+          min-height: 300px;
+        }
+        
+        .hero-section h1 {
+          font-size: 2.5rem !important;
+        }
+        
+        .hero-section p {
+          font-size: 1.1rem !important;
+        }
+        
+        /* Responsive card grids for county/restaurant pages */
+        .county-card, .restaurant-card {
+          height: 200px !important;
+          margin-bottom: 1rem;
+        }
+        
+        .county-card h3, .restaurant-card h3 {
+          font-size: 1.4rem !important;
+        }
+        
+        .county-card p, .restaurant-card p {
+          font-size: 0.9rem !important;
+        }
+        
+        /* Better mobile restaurant detail cards */
+        .restaurant-info-grid {
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+        }
+        
+        /* Improve padding and spacing on mobile */
+        .section {
+          padding: 2rem 1rem !important;
+        }
+        
+        .hero-section > div {
+          padding: 0 1rem !important;
+        }
+        
+        /* Better mobile form elements */
+        .cta-button {
+          padding: 0.8rem 1.5rem !important;
+          font-size: 0.9rem !important;
+        }
+        
+        /* Mobile-specific carousel improvements */
+        .carousel-arrow {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 1.2rem !important;
+        }
+        
+        .carousel-arrow.prev {
+          left: 15px !important;
+        }
+        
+        .carousel-arrow.next {
+          right: 15px !important;
+        }
+      }
+      
+      /* Tablet improvements */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .hero-section h1 {
+          font-size: 3rem !important;
+        }
+        
+        .hero-section p {
+          font-size: 1.3rem !important;
+        }
+        
+        /* Tablet grid improvements */
+        .county-card, .restaurant-card {
+          height: 220px;
+        }
+        
+        .restaurant-info-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 1rem;
+        }
+        
+        .section {
+          padding: 3rem 1.5rem;
+        }
+      }
+      
+      /* Additional responsive utilities */
+      @media (max-width: 480px) {
+        .hero-section {
+          height: 35vh;
+          min-height: 250px;
+        }
+        
+        .hero-section h1 {
+          font-size: 2rem !important;
+        }
+        
+        .hero-section p {
+          font-size: 1rem !important;
         }
         
         .section-title {
-          font-size: 1.5rem;
+          font-size: 1.5rem !important;
         }
+        
+        .county-card, .restaurant-card {
+          height: 180px !important;
+        }
+        
+        .county-card h3, .restaurant-card h3 {
+          font-size: 1.2rem !important;
+        }
+        
+        .footer {
+          padding: 2rem 1rem 1rem !important;
+        }
+      }
+      
+      /* Default mobile menu toggle hidden */
+      .mobile-menu-toggle {
+        display: none;
+      }
+      
+      /* Mobile menu overlay */
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
       }
     </style>
   </head>
@@ -398,9 +745,16 @@
       </ul>
     </div>
     
-    <main class="main-content" style="padding-top: 70px;">
+    <main class="main-content">
       {{ content }}
     </main>
+    
+    <footer class="footer">
+      <p>Discover the best of Northern Ireland | Updated daily</p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.8;">
+        <p>Photo credits: <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank" style="color: rgba(255,255,255,0.8);">Photo by Zhifei Zhou</a>, <a href="https://unsplash.com/@kmitchhodge" target="_blank" style="color: rgba(255,255,255,0.8);">Photo by K. Mitch Hodge</a>, <a href="https://unsplash.com/@enrica" target="_blank" style="color: rgba(255,255,255,0.8);">Photo by Enrica Tancioni</a> on Unsplash</p>
+      </div>
+    </footer>
     
     <script>
       // Mobile menu toggle functionality
