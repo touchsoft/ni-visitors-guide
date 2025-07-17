@@ -24,62 +24,66 @@ title: Where to Stay
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
-      
-      <a href="{{ "/county-antrim.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #1a365d 0%, rgba(26,54,93,0.8) 100%), url('{{ "/assets/images/giants-causeway-thumb.jpg" | relative_url }}'); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Antrim</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Home to the Giant's Causeway and Causeway Coast</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Accommodations</div>
-        </div>
-      </a>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <a href="{{ "/county-antrim.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #1a365d 0%, rgba(26,54,93,0.8) 100%), url('{{ "/assets/images/giants-causeway-thumb.jpg" | relative_url }}'); background-size: cover; background-position: center;">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Antrim</h5>
+            <p class="card-text">Home to the Giant's Causeway and Causeway Coast</p>
+            <span class="badge">5 Accommodations</span>
+          </div>
+        </a>
+      </div>
 
-      <a href="{{ "/county-armagh.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #2c5282 0%, rgba(44,82,130,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Armagh</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">The Orchard County with historic sites and apple orchards</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Accommodations</div>
-        </div>
-      </a>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <a href="{{ "/county-armagh.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #2c5282 0%, rgba(44,82,130,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Armagh</h5>
+            <p class="card-text">The Orchard County with historic sites and apple orchards</p>
+            <span class="badge">5 Accommodations</span>
+          </div>
+        </a>
+      </div>
 
-      <a href="{{ "/county-down.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #38a169 0%, rgba(56,161,105,0.8) 100%), url('{{ "/assets/images/mourne-mountains-thumb.jpg" | relative_url }}'); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Down</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Mourne Mountains and beautiful coastal scenery</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Accommodations</div>
-        </div>
-      </a>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <a href="{{ "/county-down.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #38a169 0%, rgba(56,161,105,0.8) 100%), url('{{ "/assets/images/mourne-mountains-thumb.jpg" | relative_url }}'); background-size: cover; background-position: center;">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Down</h5>
+            <p class="card-text">Mourne Mountains and beautiful coastal scenery</p>
+            <span class="badge">5 Accommodations</span>
+          </div>
+        </a>
+      </div>
 
-      <a href="{{ "/county-fermanagh.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #d69e2e 0%, rgba(214,158,46,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Fermanagh</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Lakelands and the famous Marble Arch Caves</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Accommodations</div>
-        </div>
-      </a>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <a href="{{ "/county-fermanagh.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #d69e2e 0%, rgba(214,158,46,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Fermanagh</h5>
+            <p class="card-text">Lakelands and the famous Marble Arch Caves</p>
+            <span class="badge">5 Accommodations</span>
+          </div>
+        </a>
+      </div>
 
-      <a href="{{ "/county-londonderry.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #e53e3e 0%, rgba(229,62,62,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Londonderry</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Walled City of Derry and stunning coastline</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Accommodations</div>
-        </div>
-      </a>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <a href="{{ "/county-londonderry.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #e53e3e 0%, rgba(229,62,62,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Londonderry</h5>
+            <p class="card-text">Walled City of Derry and stunning coastline</p>
+            <span class="badge">5 Accommodations</span>
+          </div>
+        </a>
+      </div>
 
-      <a href="{{ "/county-tyrone.html" | relative_url }}" class="county-card" style="background: linear-gradient(135deg, #805ad5 0%, rgba(128,90,213,0.8) 100%); background-size: cover; background-position: center; height: 250px; border-radius: 12px; display: flex; align-items: end; text-decoration: none; color: white; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div style="padding: 2rem; z-index: 2; position: relative;">
-          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">County Tyrone</h3>
-          <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">Rural landscapes and Ulster American Folk Park</p>
-          <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem;">5 Accommodations</div>
-        </div>
-      </a>
-
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <a href="{{ "/county-tyrone.html" | relative_url }}" class="county-card text-decoration-none" style="background: linear-gradient(135deg, #805ad5 0%, rgba(128,90,213,0.8) 100%);">
+          <div class="card-body text-white">
+            <h5 class="card-title">County Tyrone</h5>
+            <p class="card-text">Rural landscapes and Ulster American Folk Park</p>
+            <span class="badge">5 Accommodations</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
