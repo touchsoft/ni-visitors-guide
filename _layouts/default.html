@@ -621,6 +621,30 @@
           padding: 2rem 1rem 1rem !important;
         }
       }
+      
+      /* Default mobile menu toggle hidden */
+      .mobile-menu-toggle {
+        display: none;
+      }
+      
+      /* Mobile menu overlay */
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
     </style>
   </head>
   <body>
@@ -634,8 +658,21 @@
           <li><a href="{{ "/whats-on.html" | relative_url }}">What's On</a></li>
           <li><a href="{{ "/plan.html" | relative_url }}">Plan</a></li>
         </ul>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
       </div>
     </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="{{ "/" | relative_url }}">Home</a></li>
+        <li><a href="{{ "/where-to-stay.html" | relative_url }}">Where to Stay</a></li>
+        <li><a href="{{ "/eat-drink.html" | relative_url }}">Eat & Drink</a></li>
+        <li><a href="{{ "/whats-on.html" | relative_url }}">What's On</a></li>
+        <li><a href="{{ "/plan.html" | relative_url }}">Plan</a></li>
+      </ul>
+    </div>
     
     <main class="main-content">
       {{ content }}
@@ -647,5 +684,38 @@
         <p>Photo credits: <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank" style="color: rgba(255,255,255,0.8);">Photo by Zhifei Zhou</a>, <a href="https://unsplash.com/@kmitchhodge" target="_blank" style="color: rgba(255,255,255,0.8);">Photo by K. Mitch Hodge</a>, <a href="https://unsplash.com/@enrica" target="_blank" style="color: rgba(255,255,255,0.8);">Photo by Enrica Tancioni</a> on Unsplash</p>
       </div>
     </footer>
+    
+    <script>
+      // Mobile menu toggle functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        
+        function toggleMobileMenu() {
+          mobileMenu.classList.toggle('active');
+          mobileMenuOverlay.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+          mobileMenu.classList.remove('active');
+          mobileMenuOverlay.classList.remove('active');
+        }
+        
+        if (mobileMenuToggle) {
+          mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        }
+        
+        if (mobileMenuOverlay) {
+          mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+        
+        // Close mobile menu when clicking on menu links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+      });
+    </script>
   </body>
 </html>
