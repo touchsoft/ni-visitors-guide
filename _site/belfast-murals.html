@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belfast Murals | Northern Ireland Visitors Guide</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7652265036419673"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-gold: #d69e2e;
+            --accent-green: #38a169;
+            --dark-grey: #2d3748;
+            --medium-grey: #718096;
+            --light-grey: #f7fafc;
+            --border-grey: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Custom navbar styling */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-grey) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--light-grey);
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        /* Non-hero pages need padding for fixed navbar */
+        .no-hero {
+            padding-top: 80px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* County/activity cards */
+        .county-card {
+            position: relative;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .county-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .county-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .county-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .county-card h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .county-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .county-card .badge {
+            background: rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+        }
+        
+        /* Button styling */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        /* Restaurant info grid */
+        .restaurant-info {
+            background: var(--light-grey);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .county-card {
+                height: 200px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.5rem;
+            }
+            
+            .county-card p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                font-size: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .county-card {
+                height: 180px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.6rem;
+            }
+            
+            .county-card p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Northern Ireland Visitors Guide</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/where-to-stay.html">Where to Stay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eat-drink.html">Eat & Drink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/whats-on.html">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/plan.html">Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="hero-section" style="background-image: url('/assets/images/belfast-murals.jpg'); height: 60vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: center; justify-content: center; margin-top: 70px;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4);"></div>
+  <div style="text-align: center; color: white; z-index: 2; position: relative; max-width: 800px; padding: 0 2rem;">
+    <h1 style="font-size: 4rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Belfast Murals</h1>
+    <p style="font-size: 1.5rem; opacity: 0.95; font-weight: 300;">Political & Cultural Street Art</p>
+  </div>
+</div>
+
+<div class="section">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-bottom: 4rem;">
+      <div>
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem;">About Belfast Murals</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-grey); margin-bottom: 2rem;">
+          Belfast's murals are among the most famous examples of political and cultural street art in the world. These powerful artworks tell the story of Belfast's complex history, from the Troubles to the peace process and beyond, serving as both historical documents and calls for peace.
+        </p>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-grey); margin-bottom: 2rem;">
+          The murals are primarily located in loyalist and republican areas, with the most famous being along the Falls Road (republican) and Shankill Road (loyalist). The Peace Walls, which still separate some communities, feature many of these artworks and have become a symbol of Belfast's divided past and hopeful future.
+        </p>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-grey); margin-bottom: 2rem;">
+          Today, many murals have evolved from purely political statements to celebrations of culture, history, and international solidarity. They provide visitors with a unique insight into Belfast's transformation from a city in conflict to one embracing peace and reconciliation.
+        </p>
+      </div>
+      
+      <div style="background: var(--light-grey); padding: 2rem; border-radius: 12px;">
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 1.5rem;">Essential Information</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Location</h4>
+          <p style="color: var(--medium-grey);">Falls Road, Shankill Road, East Belfast</p>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Access</h4>
+          <p style="color: var(--medium-grey);">24/7 Open Access<br>
+          Self-guided or taxi tours available</p>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Cost</h4>
+          <p style="color: var(--medium-grey);">Free to view<br>
+          Taxi tours: £30-50 per person<br>
+          Walking tours: £10-15 per person</p>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Duration</h4>
+          <p style="color: var(--medium-grey);">1-3 hours depending on route</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background: var(--light-grey); padding: 4rem 2rem;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <h2 style="font-size: 2.5rem; font-weight: 700; text-align: center; color: var(--dark-grey); margin-bottom: 3rem;">Things to Do</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 1.3rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Black Taxi Tour</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Take a traditional black taxi tour with local drivers who provide personal insights into the history and meaning behind the murals.</p>
+      </div>
+      
+      <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 1.3rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Peace Walls</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Visit the Peace Walls that separate communities and see how they've been transformed into canvases for messages of hope and reconciliation.</p>
+      </div>
+      
+      <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 1.3rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Walking Tours</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Join guided walking tours that explore the historical context and artistic significance of the murals in different neighborhoods.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <h2 style="font-size: 2.5rem; font-weight: 700; text-align: center; color: var(--dark-grey); margin-bottom: 3rem;">Practical Tips</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="background: var(--primary-color); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🚖</div>
+        <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 0.5rem;">Transportation</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Black taxi tours are the most popular way to see the murals. Regular buses serve the areas, but walking tours offer the most detailed experience.</p>
+      </div>
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="background: var(--primary-color); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🤝</div>
+        <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 0.5rem;">Respect</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Show respect for the communities and their history. Be mindful that these areas have deep cultural significance to residents.</p>
+      </div>
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="background: var(--primary-color); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">📸</div>
+        <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 0.5rem;">Photography</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Photography is generally allowed, but ask permission if taking photos near people's homes. Some murals are better preserved than others.</p>
+      </div>
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="background: var(--primary-color); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🕐</div>
+        <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 0.5rem;">Best Time to Visit</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Daytime visits are recommended for safety and better photography. Many tour operators run regular schedules throughout the day.</p>
+      </div>
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="background: var(--primary-color); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🏛️</div>
+        <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 0.5rem;">Context</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Consider visiting the Ulster Museum or taking a guided tour to better understand the historical context before viewing the murals.</p>
+      </div>
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="background: var(--primary-color); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🔄</div>
+        <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 0.5rem;">Changing Art</h3>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Murals are regularly updated or replaced, so each visit may offer new artwork. Some historic murals are preserved while others evolve.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="credits-section" style="background: var(--light-grey); padding: 3rem 2rem; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 1rem;">Photo Credits</h3>
+    <p style="color: var(--medium-grey);"><strong>Belfast Murals:</strong> Photo courtesy of Tourism Northern Ireland</p>
+  </div>
+</div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Discover the best of Northern Ireland | Updated daily</p>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 2rem 0 1rem;">
+            <p style="font-size: 0.9rem;">
+                Photo credits: 
+                <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank">Photo by Zhifei Zhou</a>, 
+                <a href="https://unsplash.com/@kmitchhodge" target="_blank">Photo by K. Mitch Hodge</a>, 
+                <a href="https://unsplash.com/@enrica" target="_blank">Photo by Enrica Tancioni</a> 
+                on Unsplash
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

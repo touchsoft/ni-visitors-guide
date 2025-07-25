@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giant's Causeway: A Natural Wonder of Northern Ireland | Northern Ireland Visitors Guide</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7652265036419673"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-gold: #d69e2e;
+            --accent-green: #38a169;
+            --dark-grey: #2d3748;
+            --medium-grey: #718096;
+            --light-grey: #f7fafc;
+            --border-grey: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Custom navbar styling */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-grey) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--light-grey);
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        /* Non-hero pages need padding for fixed navbar */
+        .no-hero {
+            padding-top: 80px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* County/activity cards */
+        .county-card {
+            position: relative;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .county-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .county-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .county-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .county-card h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .county-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .county-card .badge {
+            background: rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+        }
+        
+        /* Button styling */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        /* Restaurant info grid */
+        .restaurant-info {
+            background: var(--light-grey);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .county-card {
+                height: 200px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.5rem;
+            }
+            
+            .county-card p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                font-size: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .county-card {
+                height: 180px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.6rem;
+            }
+            
+            .county-card p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Northern Ireland Visitors Guide</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/where-to-stay.html">Where to Stay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eat-drink.html">Eat & Drink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/whats-on.html">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/plan.html">Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <h1 id="giants-causeway-a-natural-wonder-of-northern-ireland">Giant’s Causeway: A Natural Wonder of Northern Ireland</h1>
+
+<p>The Giant’s Causeway stands as one of Northern Ireland’s most spectacular natural attractions, captivating visitors with its otherworldly landscape of hexagonal basalt columns that seem too perfect to be natural. Located on the rugged Antrim Coast, this UNESCO World Heritage Site has been inspiring awe and wonder for centuries.</p>
+
+<h2 id="the-legend-of-finn-mccool">The Legend of Finn McCool</h2>
+
+<p>Irish folklore tells the tale of the giant Finn McCool (Fionn mac Cumhaill), who built the causeway as a bridge to Scotland to fight his rival, the Scottish giant Benandonner. When Finn saw the enormous size of his opponent, he fled back to Ireland, where his clever wife Oonagh disguised him as a baby. Upon seeing the “infant’s” size, Benandonner feared the father must be massive and fled, destroying the causeway behind him. Only the ends remain today - the Giant’s Causeway in Northern Ireland and Fingal’s Cave in Scotland.</p>
+
+<h2 id="the-science-behind-the-wonder">The Science Behind the Wonder</h2>
+
+<p>The reality is equally fascinating. Around 50-60 million years ago, volcanic activity created these remarkable formations. As molten basalt lava cooled and contracted, it formed the distinctive hexagonal columns we see today. The causeway contains approximately 40,000 interlocking basalt columns, with some reaching heights of 12 meters.</p>
+
+<h2 id="what-to-expect-during-your-visit">What to Expect During Your Visit</h2>
+
+<h3 id="the-visitor-centre">The Visitor Centre</h3>
+<p>Start your journey at the award-winning visitor centre, which offers:</p>
+<ul>
+  <li>Interactive exhibitions about the causeway’s formation</li>
+  <li>Audio-visual presentations on local legends</li>
+  <li>Gift shop featuring local crafts and souvenirs</li>
+  <li>Café with views over the causeway</li>
+</ul>
+
+<h3 id="the-causeway-trail">The Causeway Trail</h3>
+<p>The main trail is about 1 mile long, taking you:</p>
+<ul>
+  <li>Along the cliff-top path with stunning coastal views</li>
+  <li>Down to the famous basalt columns</li>
+  <li>Past formations like the Giant’s Boot and Wishing Chair</li>
+  <li>Through diverse coastal habitats</li>
+</ul>
+
+<h3 id="notable-formations">Notable Formations</h3>
+<ul>
+  <li><strong>The Giant’s Boot</strong>: A boot-shaped rock formation</li>
+  <li><strong>The Wishing Chair</strong>: Sitting here is said to grant wishes</li>
+  <li><strong>The Camel</strong>: A rock formation resembling a camel</li>
+  <li><strong>The Organ</strong>: Columns resembling church organ pipes</li>
+</ul>
+
+<h2 id="practical-information">Practical Information</h2>
+
+<p><strong>Opening Hours</strong>: Open year-round, visitor centre hours vary seasonally
+<strong>Admission</strong>: Paid entry to visitor centre, free access to causeway itself
+<strong>Duration</strong>: Allow 2-3 hours for full experience
+<strong>Accessibility</strong>: Shuttle bus available to causeway for those with mobility issues</p>
+
+<h2 id="photography-tips">Photography Tips</h2>
+
+<ul>
+  <li><strong>Best Times</strong>: Golden hour (sunrise/sunset) for dramatic lighting</li>
+  <li><strong>Equipment</strong>: Wide-angle lens for capturing the full scope</li>
+  <li><strong>Composition</strong>: Include people for scale to show the massive size</li>
+  <li><strong>Weather</strong>: Stormy conditions can create dramatic seascapes</li>
+</ul>
+
+<h2 id="beyond-the-causeway">Beyond the Causeway</h2>
+
+<p>While the causeway is the main attraction, the surrounding area offers:</p>
+<ul>
+  <li><strong>Carrick-a-Rede Rope Bridge</strong>: A thrilling crossing 30 meters above the sea</li>
+  <li><strong>Dunluce Castle</strong>: Dramatic clifftop ruins</li>
+  <li><strong>Bushmills Distillery</strong>: The world’s oldest licensed whiskey distillery</li>
+  <li><strong>Causeway Coast Way</strong>: A scenic walking trail</li>
+</ul>
+
+<h2 id="conservation-and-preservation">Conservation and Preservation</h2>
+
+<p>The Giant’s Causeway is protected by:</p>
+<ul>
+  <li>UNESCO World Heritage Status</li>
+  <li>National Trust conservation efforts</li>
+  <li>Northern Ireland Environment Agency</li>
+  <li>Strict visitor management to prevent erosion</li>
+</ul>
+
+<h2 id="planning-your-visit">Planning Your Visit</h2>
+
+<p><strong>Best Time to Visit</strong>: April to October for milder weather, though winter visits can be spectacular
+<strong>Getting There</strong>:</p>
+<ul>
+  <li>By car: 2 miles from Bushmills village</li>
+  <li>By bus: Translink Causeway Rambler service</li>
+  <li>By tour: Many Belfast-based tour operators include the causeway</li>
+</ul>
+
+<p><strong>What to Bring</strong>:</p>
+<ul>
+  <li>Comfortable walking shoes (can be slippery when wet)</li>
+  <li>Weather-appropriate clothing</li>
+  <li>Camera with extra batteries</li>
+  <li>Water and snacks</li>
+</ul>
+
+<p>The Giant’s Causeway remains one of Ireland’s most photographed locations, and for good reason. Whether you’re drawn by the geological wonder, the mythical legends, or simply the raw beauty of the Antrim Coast, this natural masterpiece offers an unforgettable experience that connects visitors to both the island’s ancient past and its dynamic natural forces.</p>
+
+<p><em>Slán go fóill</em> (goodbye for now) - may your visit to this natural wonder create memories as enduring as the basalt columns themselves.</p>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Discover the best of Northern Ireland | Updated daily</p>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 2rem 0 1rem;">
+            <p style="font-size: 0.9rem;">
+                Photo credits: 
+                <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank">Photo by Zhifei Zhou</a>, 
+                <a href="https://unsplash.com/@kmitchhodge" target="_blank">Photo by K. Mitch Hodge</a>, 
+                <a href="https://unsplash.com/@enrica" target="_blank">Photo by Enrica Tancioni</a> 
+                on Unsplash
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

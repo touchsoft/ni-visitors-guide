@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>County Down Accommodation | Northern Ireland Visitors Guide</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7652265036419673"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-gold: #d69e2e;
+            --accent-green: #38a169;
+            --dark-grey: #2d3748;
+            --medium-grey: #718096;
+            --light-grey: #f7fafc;
+            --border-grey: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Custom navbar styling */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-grey) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--light-grey);
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        /* Non-hero pages need padding for fixed navbar */
+        .no-hero {
+            padding-top: 80px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* County/activity cards */
+        .county-card {
+            position: relative;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .county-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .county-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .county-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .county-card h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .county-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .county-card .badge {
+            background: rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+        }
+        
+        /* Button styling */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        /* Restaurant info grid */
+        .restaurant-info {
+            background: var(--light-grey);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .county-card {
+                height: 200px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.5rem;
+            }
+            
+            .county-card p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                font-size: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .county-card {
+                height: 180px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.6rem;
+            }
+            
+            .county-card p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Northern Ireland Visitors Guide</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/where-to-stay.html">Where to Stay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eat-drink.html">Eat & Drink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/whats-on.html">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/plan.html">Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="hero-section" style="background: linear-gradient(135deg, #38a169 0%, rgba(56,161,105,0.8) 100%), url('/assets/images/mourne-mountains.jpg'); background-size: cover; background-position: center; height: 50vh; display: flex; align-items: center; justify-content: center; margin-top: 70px;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4);"></div>
+  <div style="text-align: center; color: white; z-index: 2; position: relative; max-width: 800px; padding: 0 2rem;">
+    <h1 style="font-size: 4rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">County Down</h1>
+    <p style="font-size: 1.5rem; opacity: 0.95; font-weight: 300;">Mourne Mountains and beautiful coastal scenery</p>
+  </div>
+</div>
+
+<div class="section">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem;">Where to Stay in County Down</h2>
+      <p style="font-size: 1.2rem; color: var(--medium-grey); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+        County Down offers accommodation from luxury mountain resorts to charming coastal inns, perfectly positioned 
+        for exploring the Mourne Mountains, Newcastle beaches, and historic Strangford Lough.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+      
+      <!-- Slieve Donard Resort and Spa -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+        <div style="padding: 2rem;">
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Slieve Donard Resort and Spa</h3>
+          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+            Prestigious 5-star hotel nestled at the foot of the Mountains of Mourne, standing in six acres of immaculate private grounds. The Spa at Slieve Donard was named 'Spa of The Year' for 2024 by Ulster Tatler. Just 500 metres from Newcastle Beach.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <div>
+              <strong style="color: var(--dark-grey);">Location:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">Downs Road, Newcastle</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Type:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">5-Star Resort & Spa</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Phone:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">028 4372 1066</p>
+            </div>
+          </div>
+          <a href="https://marineandlawn.com/slievedonard" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
+        </div>
+      </div>
+
+      <!-- Burrendale Hotel, Country Club & Spa -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+        <div style="padding: 2rem;">
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Burrendale Hotel, Country Club & Spa</h3>
+          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+            Leading four-star hotel nestled beneath the Mountains of Mourne. Offers comprehensive facilities including a spa, country club, and leisure facilities. Located less than 2 hours from Dublin and 45 minutes from Belfast.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <div>
+              <strong style="color: var(--dark-grey);">Location:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">51 Castlewellan Road, Newcastle</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Type:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">4-Star Hotel & Country Club</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Phone:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">028 4372 2599</p>
+            </div>
+          </div>
+          <a href="https://www.burrendale.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
+        </div>
+      </div>
+
+      <!-- Kilmorey Arms Hotel -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+        <div style="padding: 2rem;">
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Kilmorey Arms Hotel</h3>
+          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+            Family-run hotel situated in the heart of Kilkeel, by the foothills of the Mourne Mountains. Recently refurbished with 24 beautifully appointed rooms, 3 fully equipped suites, and a highly renowned restaurant.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <div>
+              <strong style="color: var(--dark-grey);">Location:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">41-43 Greencastle Street, Kilkeel</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Type:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">Family-Run Hotel</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Phone:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">028 4176 2220</p>
+            </div>
+          </div>
+          <a href="https://kilmoreyarmshotel.co.uk" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
+        </div>
+      </div>
+
+      <!-- Dufferin Coaching Inn -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+        <div style="padding: 2rem;">
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Dufferin Coaching Inn</h3>
+          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+            Award-winning four-star B&B set in a former bank building dating back to 1803. Seven uniquely decorated en-suite bedrooms in the quiet village of Killyleagh, in the shadows of one of Ireland's oldest inhabited castles.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <div>
+              <strong style="color: var(--dark-grey);">Location:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">High Street, Killyleagh</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Type:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">4-Star Historic B&B</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Phone:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">028 4482 1134</p>
+            </div>
+          </div>
+          <a href="https://www.dufferincoachinginn.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
+        </div>
+      </div>
+
+      <!-- Canal Court Hotel & Spa -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+        <div style="padding: 2rem;">
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Canal Court Hotel & Spa</h3>
+          <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+            Leading 4-star hotel ranked in the top 100 Hospitality Businesses in Northern Ireland. Located in the heart of Newry city centre with 110 recently renovated bedrooms, sitting on the banks of Ireland's oldest man-made canal.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <div>
+              <strong style="color: var(--dark-grey);">Location:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">Merchants Quay, Newry</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Type:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">4-Star Hotel & Spa</p>
+            </div>
+            <div>
+              <strong style="color: var(--dark-grey);">Phone:</strong>
+              <p style="color: var(--medium-grey); margin: 0;">028 3025 1234</p>
+            </div>
+          </div>
+          <a href="https://www.canalcourthotel.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Visit Website</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="background: var(--light-grey); padding: 3rem 2rem; text-align: center; margin-top: 4rem;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 1rem;">Planning Your Stay</h3>
+    <p style="color: var(--medium-grey); line-height: 1.8; margin-bottom: 2rem;">
+      County Down offers spectacular mountain scenery, coastal beauty, and historic charm. 
+      Perfect for outdoor enthusiasts and those seeking natural beauty and tranquil landscapes.
+    </p>
+    <a href="/where-to-stay.html" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Back to Counties</a>
+  </div>
+</div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Discover the best of Northern Ireland | Updated daily</p>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 2rem 0 1rem;">
+            <p style="font-size: 0.9rem;">
+                Photo credits: 
+                <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank">Photo by Zhifei Zhou</a>, 
+                <a href="https://unsplash.com/@kmitchhodge" target="_blank">Photo by K. Mitch Hodge</a>, 
+                <a href="https://unsplash.com/@enrica" target="_blank">Photo by Enrica Tancioni</a> 
+                on Unsplash
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

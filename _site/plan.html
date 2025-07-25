@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Visit | Northern Ireland Visitors Guide</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7652265036419673"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-gold: #d69e2e;
+            --accent-green: #38a169;
+            --dark-grey: #2d3748;
+            --medium-grey: #718096;
+            --light-grey: #f7fafc;
+            --border-grey: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Custom navbar styling */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-grey) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--light-grey);
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        /* Non-hero pages need padding for fixed navbar */
+        .no-hero {
+            padding-top: 80px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* County/activity cards */
+        .county-card {
+            position: relative;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .county-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .county-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .county-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .county-card h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .county-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .county-card .badge {
+            background: rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+        }
+        
+        /* Button styling */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        /* Restaurant info grid */
+        .restaurant-info {
+            background: var(--light-grey);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .county-card {
+                height: 200px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.5rem;
+            }
+            
+            .county-card p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                font-size: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .county-card {
+                height: 180px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.6rem;
+            }
+            
+            .county-card p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Northern Ireland Visitors Guide</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/where-to-stay.html">Where to Stay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eat-drink.html">Eat & Drink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/whats-on.html">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/plan.html">Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="hero-section" style="background: linear-gradient(135deg, #1a365d 0%, rgba(56,161,105,0.8) 100%), url('/assets/images/enrica-tancioni.jpg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center hero-content">
+        <h1 class="display-2 fw-bold">Plan Your Visit</h1>
+        <p class="lead">Essential travel logistics for your Northern Ireland adventure</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem;">Travel Logistics</h2>
+      <p style="font-size: 1.2rem; color: var(--medium-grey); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+        Everything you need to know about getting to and around Northern Ireland. From flights and ferries to local transport, 
+        we've got you covered for a smooth and enjoyable visit.
+      </p>
+    </div>
+
+    <!-- Air Travel Section -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">✈️ Air Travel</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+        
+        <!-- Belfast International Airport -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">Belfast International Airport (BFS)</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              Main international gateway serving over 6.7 million passengers annually. Located 19 miles from Belfast city center with 65 destinations across 24 countries.
+            </p>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Major Airlines:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">easyJet, Jet2, Ryanair UK, TUI Airways</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Popular Routes:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Edinburgh, Manchester, London (Stansted, Gatwick, Luton), Amsterdam, Brussels</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Transport to City:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Airport Express 300 Bus: £9.50 (40 mins) | Taxi: £62 (30-45 mins)</p>
+            </div>
+            <a href="https://www.belfastairport.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Airport Website</a>
+          </div>
+        </div>
+
+        <!-- Belfast City Airport -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">George Best Belfast City Airport (BHD)</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              UK's most punctual airport, just 5 minutes from Belfast city center. Serves 30 routes across UK and Europe with average 6-minute security processing.
+            </p>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Major Airlines:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Aer Lingus Regional, British Airways, easyJet, KLM, Loganair</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Focus:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">UK domestic and European connections, ideal for onward travel</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Transport to City:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Taxi: £16 (10 mins) | Train: From adjacent Sydenham Station</p>
+            </div>
+            <a href="https://www.belfastcityairport.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Airport Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ferry Travel Section -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">⛴️ Ferry Travel</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+        
+        <!-- Stena Line -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">Stena Line</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              Major ferry operator offering multiple daily sailings to Northern Ireland from Scotland and England, with modern vessels and car ferry options.
+            </p>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Routes:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                • Cairnryan to Belfast: 12 daily sailings (2hrs 15mins)<br>
+                • Liverpool to Belfast: 4 daily sailings (8hrs)
+              </p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Prices:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Foot passengers from £32-£42 | Car ferry varies by season</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Special Offers:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Kids go free (ages 0-15), 20% discount on car travel</p>
+            </div>
+            <a href="https://www.stenaline.co.uk" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Book with Stena Line</a>
+          </div>
+        </div>
+
+        <!-- P&O Ferries -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">P&O Ferries</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              Reliable ferry service connecting Scotland to Northern Ireland with frequent sailings and competitive pricing for both foot passengers and vehicles.
+            </p>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Routes:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                • Cairnryan to Larne: 29 weekly sailings (2hrs)<br>
+                • Troon to Larne: Available service
+              </p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Prices:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Foot passengers: £18-£155 | Car ferry: £79-£256</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--primary-color);">Frequency:</strong>
+              <p style="color: var(--medium-grey); margin: 0.5rem 0;">Up to 178 weekly sailings to Northern Ireland</p>
+            </div>
+            <a href="https://www.poferries.com" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Book with P&O Ferries</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Local Transport Section -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">🚌 Local Transport</h3>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+        
+        <!-- Public Transport -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">🚍 Public Transport (Translink)</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              Comprehensive public transport network covering buses, trains, and rapid transit throughout Northern Ireland.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+              <div>
+                <strong style="color: var(--primary-color);">Services:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • NI Railways (Belfast-Derry, Belfast-Dublin)<br>
+                  • Ulsterbus (Regional services)<br>
+                  • Metro (Belfast city buses)<br>
+                  • Glider (Bus Rapid Transit)
+                </p>
+              </div>
+              <div>
+                <strong style="color: var(--primary-color);">Ticketing:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • iLink Card: £16.50 all-zone daily pass<br>
+                  • dayLink: £3.50 unlimited Belfast travel<br>
+                  • yLink: 50% discount for ages 16-23
+                </p>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <a href="https://www.translink.co.uk" target="_blank" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Translink Website</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car Rental -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">🚗 Car Rental</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              Flexible way to explore Northern Ireland at your own pace with multiple rental companies and convenient airport pickup.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+              <div>
+                <strong style="color: var(--primary-color);">Companies:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  Alamo, Avis, Budget, Enterprise, Europcar, Hertz, National
+                </p>
+              </div>
+              <div>
+                <strong style="color: var(--primary-color);">Requirements:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • Minimum age: 21 years<br>
+                  • Valid license: 1+ years<br>
+                  • International visitors: 4+ years license
+                </p>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <div style="background: var(--light-grey); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--dark-grey);">Driving Tips:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • Drive on the left side<br>
+                  • Most rentals are manual (book automatic in advance)<br>
+                  • Some companies charge extra for Republic of Ireland travel
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Taxis and Ride-sharing -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">🚕 Taxis & Ride-sharing</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              Convenient point-to-point transport with traditional taxis and modern ride-sharing apps available in major cities.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+              <div>
+                <strong style="color: var(--primary-color);">Ride-sharing:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • Uber (Belfast and Derry)<br>
+                  • FREENOW (pre-booking available)<br>
+                  • Drivers must be registered taxi drivers
+                </p>
+              </div>
+              <div>
+                <strong style="color: var(--primary-color);">Traditional Taxis:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • Available 24/7 in Belfast<br>
+                  • Regulated fares<br>
+                  • Cash and card accepted
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tourist Transport -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="padding: 2rem;">
+            <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 1rem;">🎯 Tourist Transport</h4>
+            <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1.5rem;">
+              Specialized transport options designed for tourists, including sightseeing buses and guided tours.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+              <div>
+                <strong style="color: var(--primary-color);">Hop-on Hop-off Buses:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • Belfast City Sightseeing: 19 stops<br>
+                  • £20-24 per person<br>
+                  • 75-90 minutes full loop<br>
+                  • Starting point: Belfast City Hall
+                </p>
+              </div>
+              <div>
+                <strong style="color: var(--primary-color);">Belfast Bikes:</strong>
+                <p style="color: var(--medium-grey); margin: 0.5rem 0;">
+                  • 50+ docking stations<br>
+                  • First 30 minutes free<br>
+                  • £6 three-day membership<br>
+                  • £25 annual membership
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Reference Section -->
+<div style="background: var(--light-grey); padding: 4rem 2rem; margin-top: 4rem;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h3 style="font-size: 2rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem; text-align: center;">💡 Quick Reference</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Cost Summary</h4>
+        <p style="color: var(--medium-grey); line-height: 1.8;">
+          • Airport transfers: £9.50 (bus) to £62 (taxi)<br>
+          • Ferry travel: £18-£155 (foot passenger)<br>
+          • Public transport: £3.50 (Belfast day pass)<br>
+          • Hop-on hop-off tours: £20-24 per person
+        </p>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Booking Websites</h4>
+        <p style="color: var(--medium-grey); line-height: 1.8;">
+          • Airports: belfastairport.com, belfastcityairport.com<br>
+          • Ferries: stenaline.co.uk, poferries.com<br>
+          • Public transport: translink.co.uk<br>
+          • Ride-sharing: uber.com
+        </p>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Top Tips</h4>
+        <p style="color: var(--medium-grey); line-height: 1.8;">
+          • Book airport transfers in advance for better prices<br>
+          • Consider ferry travel for scenic approach<br>
+          • Use public transport for city exploration<br>
+          • Rent a car for countryside adventures
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Discover the best of Northern Ireland | Updated daily</p>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 2rem 0 1rem;">
+            <p style="font-size: 0.9rem;">
+                Photo credits: 
+                <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank">Photo by Zhifei Zhou</a>, 
+                <a href="https://unsplash.com/@kmitchhodge" target="_blank">Photo by K. Mitch Hodge</a>, 
+                <a href="https://unsplash.com/@enrica" target="_blank">Photo by Enrica Tancioni</a> 
+                on Unsplash
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

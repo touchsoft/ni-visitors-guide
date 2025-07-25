@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>County Antrim Restaurants | Northern Ireland Visitors Guide</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7652265036419673"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-gold: #d69e2e;
+            --accent-green: #38a169;
+            --dark-grey: #2d3748;
+            --medium-grey: #718096;
+            --light-grey: #f7fafc;
+            --border-grey: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Custom navbar styling */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-grey) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--light-grey);
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        /* Non-hero pages need padding for fixed navbar */
+        .no-hero {
+            padding-top: 80px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* County/activity cards */
+        .county-card {
+            position: relative;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .county-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .county-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .county-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .county-card h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .county-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .county-card .badge {
+            background: rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+        }
+        
+        /* Button styling */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        /* Restaurant info grid */
+        .restaurant-info {
+            background: var(--light-grey);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .county-card {
+                height: 200px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.5rem;
+            }
+            
+            .county-card p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                font-size: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .county-card {
+                height: 180px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.6rem;
+            }
+            
+            .county-card p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Northern Ireland Visitors Guide</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/where-to-stay.html">Where to Stay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eat-drink.html">Eat & Drink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/whats-on.html">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/plan.html">Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="hero-section" style="background-image: url('/assets/images/giants-causeway.jpg');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center hero-content">
+        <h1 class="display-2 fw-bold">County Antrim</h1>
+        <p class="lead">Coastal dining and Belfast's culinary scene</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="text-center mb-5">
+          <h2 class="section-title display-4 fw-bold text-dark mb-4">Where to Eat in County Antrim</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <p class="lead text-muted lh-lg">
+                County Antrim offers exceptional dining from Belfast's award-winning restaurants to traditional coastal pubs, 
+                perfectly positioned for exploring the Giant's Causeway and vibrant city cuisine.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- The Ginger Bistro -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">The Ginger Bistro</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Once voted the best restaurant in Northern Ireland, this multi-award winning bistro has been operating since 2000. Located near Belfast Opera House, Europa Hotel and the Crown Bar, it offers adventurous menu options with impeccable service.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">68/72 Great Victoria Street, Belfast</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Fine Dining</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 9024 4421</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.gingerbistro.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Bushmills Inn Restaurant -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">The Bushmills Inn Restaurant</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  A luxury hotel with an AA Rosette restaurant, one of Ireland's most well-known luxurious hotels. Features open turf fires, gas lights, and hidden nooks. Offers fine & al fresco dining on the Patio, Sunday carvery lunch, and dining in the Gas Bar.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">Bushmills, County Antrim</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Fine Dining/Traditional Inn</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 2073 3000</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.bushmillsinn.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Harbour Bistro -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">The Harbour Bistro</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Located within one of Northern Ireland's oldest pubs, part of The Ramore Family of Restaurants. Nestled in the picturesque seaside town of Portrush along the breathtaking North Antrim coast, celebrating barbeque dining with rustic authenticity.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">Harbour Road, Portrush</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Casual Dining/Seafood</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 7082 2430</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://ramorerestaurant.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ownies Bar and Bistro -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">Ownies Bar and Bistro</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Recognized as one of Ireland's finest Gastro Pubs, offering the highest standards of service and food while maintaining the warm atmosphere of an Irish Pub. Located in the heart of Carrick near the historical Carrickfergus Castle, famous for its seafood chowder.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">16-18 Joymount, Carrickfergus</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Gastro Pub</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 9335 1850</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.owniesbarbistro.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brown Trout Golf & Country Inn -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="card-title h4 fw-bold mb-3" style="color: var(--primary-color);">Brown Trout Golf & Country Inn</h3>
+                <p class="card-text text-muted lh-lg mb-4">
+                  Owned and managed by the O'Hara family for four generations, this 3-star country inn is located just 10 minutes from Coleraine and 20 minutes from the North Coast. Traditional Irish hospitality with quality dining in a scenic rural setting.
+                </p>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Location:</strong>
+                      <p class="text-muted mb-0 small">209 Agivey Road, Aghadowey</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Type:</strong>
+                      <p class="text-muted mb-0 small">Country Inn Restaurant</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="restaurant-info p-3 bg-light rounded">
+                      <strong class="d-block mb-2 text-dark">Phone:</strong>
+                      <p class="text-muted mb-0 small">028 7086 8209</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://browntroutinn.com" target="_blank" class="btn btn-primary">Visit Website</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-light py-5 mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center">
+          <h3 class="h4 fw-semibold text-dark mb-4">Dining in County Antrim</h3>
+          <p class="text-muted lh-lg mb-4">
+            County Antrim offers exceptional dining from Belfast's award-winning restaurants to traditional coastal pubs. 
+            Experience the perfect blend of fine dining, fresh seafood, and warm Irish hospitality.
+          </p>
+          <a href="/eat-drink.html" class="btn btn-primary">Back to Counties</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Discover the best of Northern Ireland | Updated daily</p>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 2rem 0 1rem;">
+            <p style="font-size: 0.9rem;">
+                Photo credits: 
+                <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank">Photo by Zhifei Zhou</a>, 
+                <a href="https://unsplash.com/@kmitchhodge" target="_blank">Photo by K. Mitch Hodge</a>, 
+                <a href="https://unsplash.com/@enrica" target="_blank">Photo by Enrica Tancioni</a> 
+                on Unsplash
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

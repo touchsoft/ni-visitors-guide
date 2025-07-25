@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's On | Northern Ireland Visitors Guide</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7652265036419673"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-gold: #d69e2e;
+            --accent-green: #38a169;
+            --dark-grey: #2d3748;
+            --medium-grey: #718096;
+            --light-grey: #f7fafc;
+            --border-grey: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Custom navbar styling */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-grey) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--light-grey);
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        /* Non-hero pages need padding for fixed navbar */
+        .no-hero {
+            padding-top: 80px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* County/activity cards */
+        .county-card {
+            position: relative;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .county-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .county-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .county-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .county-card h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .county-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .county-card .badge {
+            background: rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+        }
+        
+        /* Button styling */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        /* Restaurant info grid */
+        .restaurant-info {
+            background: var(--light-grey);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .county-card {
+                height: 200px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.5rem;
+            }
+            
+            .county-card p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                font-size: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .county-card {
+                height: 180px;
+            }
+            
+            .county-card h5 {
+                font-size: 1.6rem;
+            }
+            
+            .county-card p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Northern Ireland Visitors Guide</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/where-to-stay.html">Where to Stay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eat-drink.html">Eat & Drink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/whats-on.html">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/plan.html">Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="hero-section" style="background: linear-gradient(135deg, #805ad5 0%, rgba(229,62,62,0.8) 100%), url('/assets/images/k-mitch-hodge2.jpg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center hero-content">
+        <h1 class="display-2 fw-bold">What's On</h1>
+        <p class="lead">Year-round events, festivals, and cultural experiences</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem;">Northern Ireland Events Calendar</h2>
+      <p style="font-size: 1.2rem; color: var(--medium-grey); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+        Discover festivals, cultural events, and seasonal celebrations happening throughout the year in Northern Ireland. 
+        From traditional music sessions to international festivals, there's always something exciting to experience.
+      </p>
+    </div>
+
+    <!-- Month Navigation -->
+    <div style="display: flex; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 0.5rem;">
+      <button onclick="showMonth(0)" class="month-btn active" style="background: var(--primary-color); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">January</button>
+      <button onclick="showMonth(1)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">February</button>
+      <button onclick="showMonth(2)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">March</button>
+      <button onclick="showMonth(3)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">April</button>
+      <button onclick="showMonth(4)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">May</button>
+      <button onclick="showMonth(5)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">June</button>
+      <button onclick="showMonth(6)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">July</button>
+      <button onclick="showMonth(7)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">August</button>
+      <button onclick="showMonth(8)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">September</button>
+      <button onclick="showMonth(9)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">October</button>
+      <button onclick="showMonth(10)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">November</button>
+      <button onclick="showMonth(11)" class="month-btn" style="background: var(--light-grey); color: var(--dark-grey); border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">December</button>
+    </div>
+
+    <!-- Events Content -->
+    <div id="events-container">
+      <!-- January Events -->
+      <div id="month-0" class="month-content">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">January Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Arts Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Out to Lunch Festival</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Annual festival of music, comedy, theatre, art and literature in Belfast's Cathedral Quarter. A perfect way to beat the winter blues with indoor cultural experiences.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Cathedral Quarter, Belfast</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">January (dates TBC)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- February Events -->
+      <div id="month-1" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">February Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-green); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Music Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">TradFest Ireland</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Traditional Irish music concerts and sessions at multiple venues across Northern Ireland. Experience authentic Irish culture with local musicians and traditional instruments.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Multiple venues across Northern Ireland</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">February (dates TBC)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- March Events -->
+      <div id="month-2" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">March Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-green); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Traditional Celebration</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">St. Patrick's Day Celebrations</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Ireland's biggest celebration with parades, traditional music sessions, and family activities throughout Northern Ireland. Belfast, Armagh, and Derry host the largest celebrations.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Belfast, Armagh, Derry & towns throughout NI</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">March 17, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--secondary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Cultural Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Armagh's Home of St Patrick's Festival</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Music, art, theatre, film and dance celebrating Ireland's patron saint in his spiritual home. Armagh is where St. Patrick established his first church in Ireland.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Armagh City</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">March 9-17, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- April Events -->
+      <div id="month-3" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">April Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-gold); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Family Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Belfast Children's Festival</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Theatre, dance, music, art, and family activities designed specifically for children. A wonderful way to introduce young visitors to Northern Ireland's cultural scene.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Belfast venues</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">April (dates TBC)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- May Events -->
+      <div id="month-4" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">May Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Arts Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Cathedral Quarter Arts Festival</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Over 100 events including live music, comedy, literature, theatre, film, and visual art in Belfast's cultural heart. One of Northern Ireland's premier arts festivals.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Belfast Cathedral Quarter</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">May 1-11, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-green); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Sports Event</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">North West 200</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Ireland's largest outdoor sporting event featuring motorcycle road racing on the Causeway Coast. Thrilling racing through the streets of Portrush, Portstewart, and Coleraine.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Portrush, Portstewart, Coleraine</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">May 5-10, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--secondary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Sports Event</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Belfast City Marathon</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Full marathon plus other running events through the streets of Belfast. Join thousands of runners or cheer them on as they explore the city's landmarks and neighborhoods.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Belfast</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">May 4, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- June Events -->
+      <div id="month-5" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">June Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--secondary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Cultural Event</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Bloomsday Festival</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Literary celebration of James Joyce held on June 16th, the date on which his novel Ulysses takes place. Literary readings, performances, and Joyce-themed events across venues.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Various venues</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">June 16, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- July Events -->
+      <div id="month-6" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">July Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-green); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Sports Event</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">The Open Championship</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Major golf championship returns to Royal Portrush Golf Club on the stunning Causeway Coast. Watch the world's best golfers compete in one of golf's most prestigious tournaments.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Royal Portrush Golf Club</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">July 13-20, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Traditional Celebration</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Orange Order Parades (The Twelfth)</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Traditional Protestant parades commemorating the Battle of the Boyne at 19 main locations across Northern Ireland. A significant cultural and historical event with bands, banners, and parades.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">19 locations across Northern Ireland</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">July 12, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- August Events -->
+      <div id="month-7" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">August Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-gold); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Traditional Market</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Auld Lammas Fair</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Ireland's oldest traditional fair dating to the 17th century in Ballycastle. Famous for Yellowman candy and dulse seaweed, with street stalls, traditional music, and authentic Irish market atmosphere.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Ballycastle, County Antrim</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">August 25-26, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-green); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Cultural Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Féile an Phobail</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Ireland's biggest community arts festival celebrating Gaelic and republican culture in Belfast. Features traditional music, dance, storytelling, debates, and cultural exhibitions.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Belfast</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">August (dates TBC)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- September Events -->
+      <div id="month-8" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">September Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-gold); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Food Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Armagh Food & Cider Weekend</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Food tastings, cider tours, and artisan experiences in the heart of the Orchard County. Experience local apple harvests, traditional cider making, and regional specialties.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Armagh (Orchard County)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">September 4-7, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- October Events -->
+      <div id="month-9" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">October Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Arts Festival</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Belfast Festival at Queen's</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">International arts festival with music, theatre, dance, and visual arts at Queen's University Belfast and city venues. Features world-class performers and innovative productions.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Queen's University Belfast & city venues</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">October (dates TBC)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-green); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Seasonal Celebration</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Derry Halloween</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Europe's biggest Halloween festival with parades, haunted events, and Samhain celebrations. Derry transforms into a spooky wonderland with street performances, ghost tours, and family-friendly frights.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Derry/Londonderry</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">October 28-31, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- November Events -->
+      <div id="month-10" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">November Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-gold); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Christmas Market</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Belfast Christmas Market</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Over 100 international and local traders with handcrafted goods and festive treats at City Hall Gardens. Traditional German-style market with mulled wine, crafts, and holiday atmosphere.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">City Hall Gardens, Belfast</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">November 15 - December 21, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- December Events -->
+      <div id="month-11" class="month-content" style="display: none;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">December Events</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--accent-green); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Seasonal Celebration</div>
+                <h4 style="font-size: 1.4rem; font-weight: 700; color: var(--dark-grey); margin: 0;">Christmas Markets and Festivals</h4>
+              </div>
+              <p style="color: var(--medium-grey); line-height: 1.6; margin-bottom: 1rem;">Traditional Christmas markets, National Trust Christmas events, and festive celebrations throughout Northern Ireland. Experience the magic of Christmas with carol services, craft fairs, and seasonal events.</p>
+              <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📍</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Various venues across Northern Ireland</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--primary-color); font-weight: 600;">📅</span>
+                  <span style="color: var(--dark-grey); font-weight: 500;">Throughout December</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Year-round Events Section -->
+<div style="background: var(--light-grey); padding: 4rem 2rem; margin-top: 4rem;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h3 style="font-size: 2rem; font-weight: 700; color: var(--dark-grey); margin-bottom: 2rem; text-align: center;">Year-Round Events</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Traditional Music Sessions</h4>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Regular céilithe and traditional music sessions in pubs and venues across Northern Ireland. Experience authentic Irish music culture every week.</p>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Ulster Rugby Season</h4>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Professional rugby matches at Kingspan Stadium from September to May. Join the passionate Ulster rugby community for thrilling matches.</p>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem;">Game of Thrones Tours</h4>
+        <p style="color: var(--medium-grey); line-height: 1.6;">Year-round tours of filming locations across Northern Ireland. Visit the real-world settings of Westeros and the Iron Islands.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Get current month (0-indexed)
+const currentMonth = new Date().getMonth();
+
+// Show current month on page load
+document.addEventListener('DOMContentLoaded', function() {
+  showMonth(currentMonth);
+});
+
+function showMonth(monthIndex) {
+  // Hide all month contents
+  const monthContents = document.querySelectorAll('.month-content');
+  monthContents.forEach(content => {
+    content.style.display = 'none';
+  });
+  
+  // Show selected month
+  document.getElementById(`month-${monthIndex}`).style.display = 'block';
+  
+  // Update button styles
+  const buttons = document.querySelectorAll('.month-btn');
+  buttons.forEach(btn => {
+    btn.style.background = 'var(--light-grey)';
+    btn.style.color = 'var(--dark-grey)';
+    btn.classList.remove('active');
+  });
+  
+  // Highlight active button
+  buttons[monthIndex].style.background = 'var(--primary-color)';
+  buttons[monthIndex].style.color = 'white';
+  buttons[monthIndex].classList.add('active');
+}
+
+// Button hover effects
+document.querySelectorAll('.month-btn').forEach(btn => {
+  btn.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('active')) {
+      this.style.background = 'var(--border-grey)';
+    }
+  });
+  
+  btn.addEventListener('mouseleave', function() {
+    if (!this.classList.contains('active')) {
+      this.style.background = 'var(--light-grey)';
+    }
+  });
+});
+</script>
+
+<style>
+.month-btn {
+  margin: 0.25rem;
+}
+
+/* Enhanced responsive styles for What's On page */
+@media (max-width: 576px) {
+  .month-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    margin: 0.2rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem !important;
+  }
+  
+  .section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section p {
+    font-size: 1rem;
+  }
+  
+  .month-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .month-content h4 {
+    font-size: 1.2rem;
+  }
+  
+  .month-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .month-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .month-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+</style>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Discover the best of Northern Ireland | Updated daily</p>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 2rem 0 1rem;">
+            <p style="font-size: 0.9rem;">
+                Photo credits: 
+                <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-rocky-shore-dXaVGjLamoY" target="_blank">Photo by Zhifei Zhou</a>, 
+                <a href="https://unsplash.com/@kmitchhodge" target="_blank">Photo by K. Mitch Hodge</a>, 
+                <a href="https://unsplash.com/@enrica" target="_blank">Photo by Enrica Tancioni</a> 
+                on Unsplash
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
